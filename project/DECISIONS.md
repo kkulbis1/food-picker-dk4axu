@@ -5,6 +5,12 @@ Confirmed household rules for all meal planning. Newest first. Change only when 
 ## Decisions
 | Date | Decision |
 |---|---|
+| 2026-10-31 | **Lower sodium:** prefer unsalted / no-salt-added and lower-sodium products, compare sodium per serving, and avoid unnecessary added salt (broth, tamari, sauces, seasoning packets, dressings). No set mg target yet. |
+| 2026-10-31 | **Produce rules:** never romaine. Iceberg and arugula are good for raw salads. Kale raw only with many substantial toppings, never a plain kale salad. Spinach cooked only. Pears raw only, never cooked. No fruit in salads except avocado. |
+| 2026-10-31 | **Product direction:** stock both the **fridge** (ready-to-eat or reheat meals, prepped Sunday/Monday, 3–4 day window) and the **freezer** (future weeks). Daily effort for the eater is at most microwave, oven, air fryer, pressure cooker or sous vide. No chopping or assembly at eating time. Long-term mix is about 50% comfort and 50% nutrition. No inventory app for now. |
+| 2026-10-31 | **Homemade unsalted bone broth** is the long-term stock plan (chicken, and beef if practical). Don't stock up on premade bone broth. Packaged unsalted broth is OK for current recipes. |
+| 2026-10-31 | **Smart shopping is required:** use sales, digital coupons, Costco instant savings, unit prices and the right bulk sizes. Report only verified savings. |
+| 2026-10-31 | Private data lives in the PRIVATE repo `kkulbis1/kovas-…-food-private`. This public repo holds only sanitized operating docs. |
 | 2026-10-31 | **No alcohol** in any recipe. "Vodka sauce" dishes use an alcohol-free tomato-cream (rosa) sauce, or are skipped. |
 | 2026-10-31 | **2-person portions** preferred. Whole pans are fine if portioned into 2-person or individual packs afterward. |
 | 2026-10-31 | **Smart Balance or Melt** butter substitute instead of butter. |
@@ -16,7 +22,7 @@ Confirmed household rules for all meal planning. Newest first. Change only when 
 - Strictly **gluten-free**: GF pasta, flour, tortillas and breadcrumbs, and tamari instead of soy sauce. Buy items labeled GF wherever wheat could hide.
 - **No peanuts, no shellfish, no fish, no black beans.** Minimal pork. Beans, lentils and chickpeas are disliked.
 - **Nothing very spicy.** Mild garlic.
-- **No grill.** Equipment: pressure cooker, rice cooker, sous vide, vacuum sealer, air fryer, oven, stovetop, slow cooker, blender, food processor, waffle maker, Ninja Creami, microwave, stand mixer, toaster oven, immersion blender.
+- **No grill.** Confirmed: Midea multi-pressure cooker (pressure, sauté, slow cook) and KitchenAid automatic rice cooker. **Model numbers and capacities are not confirmed**, so never exceed the cooker's ⅔ / PC MAX line. Also: pressure cooker, rice cooker, sous vide, vacuum sealer, air fryer, oven, stovetop, slow cooker, blender, food processor, waffle maker, Ninja Creami, microwave, stand mixer, toaster oven, immersion blender.
 - Food safety: meat, poultry and eggs fully cooked (poultry and ground poultry 165°F, ground beef 160°F); pasteurized dairy and juice only. Reheat leftovers until steaming (165°F). Pasteurized hard cheeses (cheddar, parmesan, Swiss/Gruyère, Asiago) can go on after reheating. Soft/fresh cheeses are heated with the food until steaming.
 - No more than **30 min hands-on** per recipe; unattended cooking time can be longer.
 - No red-tomato-sauce meals (an alcohol-free rosa sauce is OK).

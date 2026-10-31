@@ -12,10 +12,18 @@ Raw files (no login needed): `https://raw.githubusercontent.com/kkulbis1/food-pi
 | [`project/COOKING_PROGRESS.md`](COOKING_PROGRESS.md) | Cooking sessions, quantities, freezing status |
 | [`project/SHOPPING_STATUS.md`](SHOPPING_STATUS.md) | Costco and King Soopers lists, cart and order status |
 | [`project/cooking/2026-10-31_Cook_Day_1.md`](cooking/2026-10-31_Cook_Day_1.md) | Cook Day 1: timeline, recipes, labels, safety, shopping list |
+| [`project/BACKLOG.md`](BACKLOG.md) | Fridge/freezer direction, bone-broth research, future sessions, shopping optimization |
 | [`project/CHATGPT_HANDOFF.md`](CHATGPT_HANDOFF.md) | Start here if you're ChatGPT |
 
-## Private: not in this repo (Kovas's Mac only, pending private storage)
-| Local path | Contents |
+## Private: in the PRIVATE repo `kkulbis1/kovas-…-food-private` (owner-only access)
+| Path | Contents |
 |---|---|
-| Project folder on Kovas's Mac (not under Git; Jay knows the path) | Raw questionnaire export (original, unchanged); `profile/` full preference profile v1.0.0 and v1.1.0 (JSON + summary) and its build script; `cooking/` private master of the cook plan; `test/` questionnaire tests; `tools/publish_public.py` (privacy-checked publishing) |
-| `food-picker-public/` inside that folder | Local working copy of this public repo |
+| `README.md` | Index of private files |
+| original response export (root) | Raw questionnaire export, original bytes unchanged (checksum recorded privately) |
+| `profile/` | Full preference profile v1.0.0 and v1.1.0 (JSON + summary) and its build script |
+| `private/` | Private health and preference context |
+| `cooking/` | Master cook plans; `archive/` holds superseded versions |
+| `tools/publish_public.py` | Sanitizes and privacy-scans before every public push |
+| `test/`, questionnaire source | Questionnaire tests and source |
+
+ChatGPT can only read the private repo if Kovas grants its GitHub connector access to that repo. This has **not been verified**.
