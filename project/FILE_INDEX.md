@@ -12,6 +12,8 @@ Raw files (no login needed): `https://raw.githubusercontent.com/kkulbis1/food-pi
 | [`project/COOKING_PROGRESS.md`](COOKING_PROGRESS.md) | Cooking sessions, quantities, freezing status |
 | [`project/SHOPPING_STATUS.md`](SHOPPING_STATUS.md) | Costco and King Soopers lists, cart and order status |
 | [`project/cooking/2026-10-31_Cook_Day_1.md`](cooking/2026-10-31_Cook_Day_1.md) | Cook Day 1: timeline, recipes, labels, safety, shopping list |
+| [`project/cooking/COOKING_GUIDE.md`](cooking/COOKING_GUIDE.md) | Stage-by-stage, audio-friendly cooking guide with timelines (Day 1 + Day 2) |
+| [`project/cooking/2026-11-01_Cook_Day_2_New_Recipes.md`](cooking/2026-11-01_Cook_Day_2_New_Recipes.md) | Short ribs + stroganoff-style noodles: sources, adaptations, recipes |
 | [`project/BACKLOG.md`](BACKLOG.md) | Fridge/freezer direction, bone-broth research, future sessions, shopping optimization |
 | [`project/CHATGPT_HANDOFF.md`](CHATGPT_HANDOFF.md) | Start here if you're ChatGPT |
 

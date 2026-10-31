@@ -2,12 +2,12 @@
 
 Last updated: 2026-10-31 ~15:00 MT by Jay (Claude Code)
 
-**Phase:** Cook Day 1. The plan has been audited, corrected and independently checked (v2.1). **Today: 12 two-person meals + the enchilada filling (≤120 active min); roll the enchiladas Sun/Mon.** Next: shopping (Costco in person → King Soopers curbside → home), then cooking.
+**Phase:** Cook Day 1 today (v2.2, cap 150 min): **all 16 meals**, enchiladas rolled today. **Sunday 11/1:** 2 new dishes (short ribs, stroganoff-style noodles), 6 more two-person meals.
 
 ## What to do next (Kovas)
 1. **Decide on the butter substitute.** Smart Balance and Melt aren't available for pickup; Earth Balance is the closest match. Then review the cart in [`SHOPPING_STATUS.md`](SHOPPING_STATUS.md) once Jay finishes.
 2. **Costco run** using the 5-item list in [`SHOPPING_STATUS.md`](SHOPPING_STATUS.md). Report anything that was missing.
-3. **Cook** using [`cooking/2026-10-31_Cook_Day_1.md`](cooking/2026-10-31_Cook_Day_1.md) v2.1. Tell Jay what was actually made and frozen.
+3. **Cook** using the step-by-step [`cooking/COOKING_GUIDE.md`](cooking/COOKING_GUIDE.md) (recipes: [`Day 1`](cooking/2026-10-31_Cook_Day_1.md), [`Day 2`](cooking/2026-11-01_Cook_Day_2_New_Recipes.md)). Tell Jay what was actually made and frozen.
 
 ## Completed (verified)
 - Meal questionnaire published at https://kkulbis1.github.io/food-picker-dk4axu/. Preferences collected; profile built (private).
@@ -23,6 +23,9 @@ Last updated: 2026-10-31 ~15:00 MT by Jay (Claude Code)
   - Enchilada sodium corrected to ~720 mg/serving without cheese.
   - Enchilada rolling moved to Sun/Mon to keep today within 120 active min.
 - **Private repository created and verified PRIVATE** (`kkulbis1/kovas-…-food-private`; owner is the only collaborator). Holds the original responses (checksum verified on GitHub), private profiles and health context.
+
+- **Day 2 recipes (new, untested):** Braised Bone-In Short Ribs (wine-free: reduced stock + gelatin + vinegar in two stages) and Creamy Ground Beef Noodles (coconut aminos instead of Worcestershire; sour cream and noodles added at serving). Based on ATK and Serious Eats techniques. The 'Philly's Phavorites' original couldn't be found or seen.
+- **Audio-friendly cooking guide** with stage timelines: [`cooking/COOKING_GUIDE.md`](cooking/COOKING_GUIDE.md).
 
 ## Active
 | Task | Owner | Status (PLANNED vs ACTUAL) |

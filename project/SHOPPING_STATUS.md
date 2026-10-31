@@ -1,6 +1,6 @@
 # Shopping status
 
-Last updated: 2026-10-31 ~15:00 MT by Jay (Claude Code). Covers Cook Day 1 **v2.1**. Recipes and reasons: [`cooking/2026-10-31_Cook_Day_1.md`](cooking/2026-10-31_Cook_Day_1.md).
+Last updated: 2026-10-31 ~15:00 MT by Jay (Claude Code). Covers Cook Day 1 **v2.2** + Cook Day 2 (Sunday) additions. Recipes and reasons: [`cooking/2026-10-31_Cook_Day_1.md`](cooking/2026-10-31_Cook_Day_1.md).
 
 **Sequence:** Costco (in person) → King Soopers curbside pickup → home.
 **Order status:**
@@ -15,7 +15,9 @@ Last updated: 2026-10-31 ~15:00 MT by Jay (Claude Code). Covers Cook Day 1 **v2.
 |---|---|---|---|
 | Boneless skinless chicken breasts | 6½–7 lb | prefer **no added solution**. The Kirkland pack lists up to 8% solution; acceptable if that's all there is | not reported |
 | Boneless skinless chicken thighs | 2½ lb needed | freeze the rest of the pack | not reported |
-| Sliced mushrooms (cremini / baby bella) | 4 × 24 oz (3 is exactly the need, with no margin) | | not reported |
+| Sliced mushrooms (cremini / baby bella) | **5 × 24 oz** (today 4½ lb + Sunday 1½ lb + spare) | | not reported |
+| **Bone-in English-cut beef short ribs** (Sunday) | **5 lb** | compare price/lb with King Soopers; if only boneless, 3½ lb | not reported |
+| **Ground beef 90/10 or 88/12** (Sunday) | **2 lb needed** | freeze the rest of a big pack in flat 1 lb bags (meatballs later) | not reported |
 | Fresh green beans | 1½ lb (2 lb bag) | trimmed if available | not reported |
 | Frozen broccoli florets | 1 bag (6 cups needed) | plain | not reported |
 
@@ -50,14 +52,22 @@ Store: **Ridge Village, 5301 W 38th Ave** (pickup). Prices below are the live Ki
 | **Kroger 100% Apple Juice 64 oz** | 2 | **Buy 1, Get 1 Free**: 2 for $2.99 |
 | **2% milk ½ gallon** (King Soopers brand) | 1 | **Buy 1, Get 1 Free** ($2.59), so a 2nd is free if you'll use it |
 | Beef for stir-fry, plain | 2 lb | |
-| Yellow onions | 2 | |
+| Yellow onions | **5 (3 lb bag)** | 2 today + 3 Sunday |
 | Red Gatorade Fruit Punch | 1 multipack | |
 | Ranch dressing | 1 | GF; no anchovy/fish/Worcestershire |
 | Blue cheese dressing | 1 | GF; no anchovy/fish/Worcestershire; pasteurized. Leave out if unconfirmed |
 | Napkins | 1 pack | |
 | Foil pans **with lids**, ~2¼ lb oblong | 12 total | |
 | Gallon freezer bags | 1 box | |
-| **Butter substitute: DECISION NEEDED** | 1 | **Smart Balance spread and Melt don't come up for pickup at this store.** Earth Balance Original ($5.79) is the closest plant-based match. Not added without Kovas's OK |
+| **Sour cream: upsize 8 oz → 16 oz** | 1 | enchiladas + stroganoff. Swap the 8 oz line |
+| **Unsalted beef broth 32 oz** (Sunday) | 2 | |
+| **Unflavored gelatin** (Knox) (Sunday) | 1 box | |
+| **Tomato paste, small can** (Sunday) | 1 | |
+| **Carrots 1 lb + celery** (Sunday) | 1 + 1 | |
+| **Red wine vinegar** (Sunday) | 1 | |
+| **Spicy brown mustard** (Sunday) | 1 | no wine in the ingredients |
+| **GF wide noodles / rotini 12 oz** (Sunday) | 1 | labeled GF |
+| Butter substitute | — | **Skipped (Kovas).** Use Smart Balance from home if there is any, otherwise olive oil |
 | Digital coupons | — | Not clipped yet |
 | Substitution setting | — | "Allow substitutions" is shown in the cart. Set it so GF items can't be swapped for non-GF items |
 
@@ -71,7 +81,7 @@ Store: **Ridge Village, 5301 W 38th Ave** (pickup). Prices below are the live Ki
 - Never accept peanuts, shellfish, fish/anchovy or alcohol.
 - Never accept seasoned or marinated meat.
 
-**Pantry check (not in the cart):** foil, paper towels, kitchen sanitizer, honey, brown sugar, toasted sesame oil, cornstarch, olive oil, unseasoned rice vinegar, dried thyme, salt-free Italian seasoning, cumin, onion powder, garlic powder, salt, pepper.
+**Pantry check (not in the cart):** sweet paprika, bay leaves, kosher salt, foil, paper towels, kitchen sanitizer, honey, brown sugar, toasted sesame oil, cornstarch, olive oil, unseasoned rice vinegar, dried thyme, salt-free Italian seasoning, cumin, onion powder, garlic powder, salt, pepper.
 
 ## Missing or substituted items (ACTUAL)
 None recorded yet.

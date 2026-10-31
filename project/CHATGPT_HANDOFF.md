@@ -4,7 +4,7 @@
 
 - **Public repo:** `kkulbis1/food-picker-dk4axu`, https://github.com/kkulbis1/food-picker-dk4axu (branch `main`). Commit history: https://github.com/kkulbis1/food-picker-dk4axu/commits/main
 - **Private repo:** `kkulbis1/kovas-…-food-private` (PRIVATE; full name withheld from public docs, so look for it in the connector's repo list). It holds the raw responses, the full profile and private context. You can read it only through the ChatGPT GitHub connector, and only if Kovas has granted that connector access to this repo. **Access has not been verified.** If you can't open it, say so, and don't guess at its contents.
-- **Snapshot:** 2026-10-31 ~15:00 MT. Cook Day 1 plan v2.1 (audited + independently checked).
+- **Snapshot:** 2026-10-31 ~16:30 MT. Day 1 plan v2.2 + Day 2 new recipes v1 + cooking guide.
 
 ## Raw files (no login)
 - https://raw.githubusercontent.com/kkulbis1/food-picker-dk4axu/main/project/STATUS.md
@@ -12,7 +12,9 @@
 - https://raw.githubusercontent.com/kkulbis1/food-picker-dk4axu/main/project/COOKING_PROGRESS.md
 - https://raw.githubusercontent.com/kkulbis1/food-picker-dk4axu/main/project/DECISIONS.md
 - https://raw.githubusercontent.com/kkulbis1/food-picker-dk4axu/main/project/BACKLOG.md
+- https://raw.githubusercontent.com/kkulbis1/food-picker-dk4axu/main/project/cooking/COOKING_GUIDE.md  ← **use this for live, step-by-step cooking help**
 - https://raw.githubusercontent.com/kkulbis1/food-picker-dk4axu/main/project/cooking/2026-10-31_Cook_Day_1.md
+- https://raw.githubusercontent.com/kkulbis1/food-picker-dk4axu/main/project/cooking/2026-11-01_Cook_Day_2_New_Recipes.md
 - https://raw.githubusercontent.com/kkulbis1/food-picker-dk4axu/main/project/FILE_INDEX.md
 
 Raw files can be cached for a few minutes after a push. These files override chat history. If they conflict with what Kovas says, ask him.
@@ -28,7 +30,7 @@ Raw files can be cached for a few minutes after a push. These files override cha
 | What did each batch cost? | COOKING_PROGRESS → batch cost (from receipts only) |
 
 ## Current status
-- **Plan:** Today: 12 two-person meals (8 unbaked casserole pans + 4 RAW prep bags) plus the enchilada filling, within 120 active min. Sun/Mon: roll 4 Enchiladas Verde pans. **Nothing is made yet.**
+- **Plan:** Today: 16 two-person meals (12 pans B + 4 RAW bags C) within 150 active min. Sunday: Braised Short Ribs ×3 + Creamy Ground Beef Noodles ×3 (D). **Nothing is made yet. The new recipes are untested.**
 - **Groceries:** Costco list is ready. The King Soopers cart is **not built**; the Chrome extension isn't connected to Jay's session. A fallback list is in SHOPPING_STATUS. **No order has been placed.**
 - **Prices and coupons:** not verified.
 
@@ -41,6 +43,11 @@ Raw files can be cached for a few minutes after a push. These files override cha
 2. The sodium estimates table: recompute from the stated assumptions.
 3. Shopping completeness against the recipes.
 4. Session 2 ideas that meet DECISIONS and lean nutrition-forward. Mark new suggestions 🆕.
+
+## Cooking-guide mode (when Kovas is cooking)
+- Read `COOKING_GUIDE.md` **one stage at a time**, in short sentences. Wait for "next." Always read the 🛑 safety line aloud.
+- Don't change amounts or temperatures. If Kovas asks for a substitution, check it against DECISIONS (GF, no alcohol, no fish/anchovy, mild) before agreeing.
+- Afterward, tell Kovas to report to Jay what was actually made, so COOKING_PROGRESS can be updated.
 
 ## Rules for ChatGPT
 - Read these files; don't ask Kovas to paste Jay's output.

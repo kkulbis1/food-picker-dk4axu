@@ -5,6 +5,10 @@ Confirmed household rules for all meal planning. Newest first. Change only when 
 ## Decisions
 | Date | Decision |
 |---|---|
+| 2026-10-31 | **Max hands-on per cooking session raised from 120 to 150 min.** Unattended time can extend beyond that. |
+| 2026-10-31 | **New dishes requested:** Braised Bone-In Short Ribs (wine-free) and Creamy Ground Beef Noodles (stroganoff-style). Both must keep the dish's identity and taste good; adapt from credible sources; never claim untested results. |
+| 2026-10-31 | **Butter substitute: not bought this trip** (Kovas: skip). Recipes use Smart Balance/Melt if it's at home, otherwise olive oil. |
+| 2026-10-31 | **No tamari or soy sauce:** tamari lists alcohol as an ingredient. Use coconut aminos. Avoid Worcestershire (anchovy) and Dijon that lists wine. |
 | 2026-10-31 | **Lower sodium:** prefer unsalted / no-salt-added and lower-sodium products, compare sodium per serving, and avoid unnecessary added salt (broth, tamari, sauces, seasoning packets, dressings). No set mg target yet. |
 | 2026-10-31 | **Produce rules:** never romaine. Iceberg and arugula are good for raw salads. Kale raw only with many substantial toppings, never a plain kale salad. Spinach cooked only. Pears raw only, never cooked. No fruit in salads except avocado. |
 | 2026-10-31 | **Product direction:** stock both the **fridge** (ready-to-eat or reheat meals, prepped Sunday/Monday, 3–4 day window) and the **freezer** (future weeks). Daily effort for the eater is at most microwave, oven, air fryer, pressure cooker or sous vide. No chopping or assembly at eating time. Long-term mix is about 50% comfort and 50% nutrition. No inventory app for now. |
