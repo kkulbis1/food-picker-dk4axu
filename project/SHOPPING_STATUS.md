@@ -5,7 +5,7 @@ Last updated: 2026-10-31 ~15:00 MT by Jay (Claude Code). Covers Cook Day 1 **v2.
 **Sequence:** Costco (in person) → King Soopers curbside pickup → home.
 **Order status:**
 - Costco: not reported.
-- King Soopers: **cart ~90% built by Jay** (about 35 lines). 3 items, coupons and the substitution setting remain. The site keeps erroring. **No order placed.**
+- King Soopers: **cart COMPLETE (54 items, est. $176.59 before tax), substitutions OFF.** Waiting for Kovas to review, pick a pickup time and pay. **No order placed.**
 - Kovas does checkout, pickup time and payment. Jay never checks out.
 
 **Prices and savings:** none verified yet. King Soopers sale prices and digital coupons need the signed-in browser. Costco's Oct 19 – Nov 15 coupon book applies automatically when your card is scanned; no clipping. No dollar figures appear here until they're verified.
@@ -69,16 +69,23 @@ Store: **Ridge Village, 5301 W 38th Ave** (pickup). Prices below are the live Ki
 
 Before session 2: **subtotal $63.86 for 21 items, 1 coupon applied (−$2.26), sale savings −$1.91.** The Birds Eye/Kroger frozen vegetables also get the **"99¢ each when you buy 5 or more"** price.
 
-### Still to add (the site started erroring again ~16:55 MT)
-| Item | Qty | Note |
-|---|---|---|
-| Red wine vinegar | 1 | Sunday |
-| Spicy brown mustard | 1 | **no wine** in the ingredients |
-| GF noodles/rotini 12 oz | 1 | labeled GF (Sunday) |
-| Sour cream | swap the 8 oz for 16 oz | |
-| Digital coupons | — | browse "Digital Coupons" and clip any that match cart items |
-| Substitution setting | — | turn **off** "Allow substitutions for all out-of-stock items" (protects GF/allergen rules) |
-| Final quantity check | — | grape 2, apple 2, beef 2, onions 5, pans 2, beef broth 2, carrots 2, chicken broth 3 |
+### Session 3 (~17:30 MT): cart COMPLETE, ready for Kovas's review
+Added:
+- Pompeian red wine vinegar ($2.89)
+- Kroger spicy brown mustard ($1.89; no wine; free from cereals)
+- **Barilla GF Fettuccine** ($2.99; for the stroganoff)
+- **Ice cream mix-ins:** SunButter Creamy ($7.49), Enjoy Life mini chips ($8.69; top-allergen-free), Jell-O vanilla instant pudding ($1.89; regular, not artificially sweetened), Hershey's natural cocoa ($5.99)
+
+Changed:
+- Sour cream swapped to 16 oz ($1.99)
+- Beef stir-fry fixed to qty 2
+- Ken's blue cheese re-added (it's low stock)
+
+**Cart totals (live, before tax): 54 items · subtotal $187.43 · coupon −$2.52 · sale savings −$8.32 · estimated $176.59.**
+
+- **Digital coupons:** searched every cart brand plus broth, juice and frozen vegetables. **No clippable coupon matches a cart item** (the Bounty coupon is for paper towels, Progresso is for non-unsalted broth, Birds Eye is for Voilà meals). The −$2.52 was applied automatically.
+- **Substitutions: OFF.** Every line shows "Backup: Do not substitute", so an out-of-stock item is left out rather than swapped.
+- **Pickup store:** Ridge Village, 5301 W 38th Ave, Wheat Ridge. **Kovas picks the time slot and pays. No order has been placed.**
 
 **Removed or changed vs. v1:**
 - Regular broth → unsalted.

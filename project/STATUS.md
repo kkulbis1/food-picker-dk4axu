@@ -31,7 +31,7 @@ Last updated: 2026-10-31 ~15:00 MT by Jay (Claude Code)
 | Task | Owner | Status (PLANNED vs ACTUAL) |
 |---|---|---|
 | Costco trip | Kovas | planned; not reported |
-| King Soopers pickup cart | Jay builds; Kovas reviews, books pickup, pays | **in progress**: 17 lines added; the King Soopers site started erroring ~15:45 |
+| King Soopers pickup cart | Jay built; Kovas reviews, picks a pickup time, pays | **complete**: 54 items, est. $176.59 before tax, substitutions off. **Not ordered** |
 | King Soopers order | Kovas | not placed |
 | Cook Day 1 | Kovas | planned; not started |
 | ChatGPT access to the private repo | Kovas (from ChatGPT) | **unverified** |
