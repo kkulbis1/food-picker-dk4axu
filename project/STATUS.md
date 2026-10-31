@@ -5,7 +5,7 @@ Last updated: 2026-10-31 ~15:00 MT by Jay (Claude Code)
 **Phase:** Cook Day 1. The plan has been audited, corrected and independently checked (v2.1). **Today: 12 two-person meals + the enchilada filling (≤120 active min); roll the enchiladas Sun/Mon.** Next: shopping (Costco in person → King Soopers curbside → home), then cooking.
 
 ## What to do next (Kovas)
-1. **Reconnect the Chrome extension** so Jay can build the King Soopers cart (see Blocker 1). If there's no time, shop from the fallback list in [`SHOPPING_STATUS.md`](SHOPPING_STATUS.md).
+1. **Decide on the butter substitute.** Smart Balance and Melt aren't available for pickup; Earth Balance is the closest match. Then review the cart in [`SHOPPING_STATUS.md`](SHOPPING_STATUS.md) once Jay finishes.
 2. **Costco run** using the 5-item list in [`SHOPPING_STATUS.md`](SHOPPING_STATUS.md). Report anything that was missing.
 3. **Cook** using [`cooking/2026-10-31_Cook_Day_1.md`](cooking/2026-10-31_Cook_Day_1.md) v2.1. Tell Jay what was actually made and frozen.
 
@@ -28,13 +28,13 @@ Last updated: 2026-10-31 ~15:00 MT by Jay (Claude Code)
 | Task | Owner | Status (PLANNED vs ACTUAL) |
 |---|---|---|
 | Costco trip | Kovas | planned; not reported |
-| King Soopers pickup cart | Jay builds; Kovas reviews, books pickup, pays | **blocked**: Chrome extension not connected to this Jay session |
+| King Soopers pickup cart | Jay builds; Kovas reviews, books pickup, pays | **in progress**: 17 lines added; the King Soopers site started erroring ~15:45 |
 | King Soopers order | Kovas | not placed |
 | Cook Day 1 | Kovas | planned; not started |
 | ChatGPT access to the private repo | Kovas (from ChatGPT) | **unverified** |
 
 ## Blockers
-1. **Chrome:** the Claude extension in Chrome is paired with the Claude desktop app and an older Claude Code terminal session, not with the current Jay session. Fix: in Claude Code, type `/chrome` and choose reconnect. If it asks, click the Claude extension icon in Chrome and sign in to claude.ai with the same account as Claude Code.
+1. **Chrome: RESOLVED 2026-10-31 ~15:20.** Fixed by restarting Chrome and checking the extension's signed-in account. **King Soopers site outage (~15:45):** the cart shows its lines as "Unavailable". Jay retries.
 2. **Prices and coupons unverified:** King Soopers digital coupons and the weekly ad need the signed-in browser session. Costco's coupon book (Oct 19 – Nov 15, 2026) applies automatically at the register.
 
 ## Questions ChatGPT should be able to answer from these files

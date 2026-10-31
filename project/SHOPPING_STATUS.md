@@ -5,7 +5,7 @@ Last updated: 2026-10-31 ~15:00 MT by Jay (Claude Code). Covers Cook Day 1 **v2.
 **Sequence:** Costco (in person) → King Soopers curbside pickup → home.
 **Order status:**
 - Costco: not reported.
-- King Soopers: **cart not built** (Chrome extension not connected). **No order placed.**
+- King Soopers: **cart in progress** (17 lines added by Jay; the site is erroring). **No order placed.**
 - Kovas does checkout, pickup time and payment. Jay never checks out.
 
 **Prices and savings:** none verified yet. King Soopers sale prices and digital coupons need the signed-in browser. Costco's Oct 19 – Nov 15 coupon book applies automatically when your card is scanned; no clipping. No dollar figures appear here until they're verified.
@@ -19,43 +19,51 @@ Last updated: 2026-10-31 ~15:00 MT by Jay (Claude Code). Covers Cook Day 1 **v2.
 | Fresh green beans | 1½ lb (2 lb bag) | trimmed if available | not reported |
 | Frozen broccoli florets | 1 bag (6 cups needed) | plain | not reported |
 
-## King Soopers (curbside cart) — fallback list if Jay can't build the cart
-"e.g." brands are **candidates, not verified** for this store's stock, price or current label. Accept them only if the label shows what's in the "Must be" column.
+## King Soopers (curbside cart) — BUILT BY JAY, IN PROGRESS
+Store: **Ridge Village, 5301 W 38th Ave** (pickup). Prices below are the live King Soopers listings, checked 2026-10-31 ~15:30 MT.
+⚠️ **~15:45 MT: the King Soopers site started erroring.** The cart page shows all 17 lines as "Unavailable" while the cart icon still shows 21 units. This looks like a site outage, so nothing was removed. Re-check before checkout.
 
-| Item | Qty | Must be | Candidate | Cart |
-|---|---|---|---|---|
-| Beef for stir-fry strips | 2 lb | plain, unseasoned | store meat dept | not added |
-| GF spaghetti or penne, 12 oz | 1 | labeled GF | Barilla Gluten Free | not added |
-| GF 1-to-1 flour | 1 | labeled GF | King Arthur Measure for Measure | not added |
-| **Unsalted / no-salt-added chicken broth, 32 oz** | 3 | labeled GF; lowest sodium | Kitchen Basics Unsalted or Pacific Unsalted | not added |
-| 2% milk, ½ gallon | 1 | | | not added |
-| Nutritional yeast | 1 | labeled GF | Bragg | not added |
-| Mild salsa verde, 16 oz | 2 | mild; labeled GF | Herdez Salsa Verde Mild | not added |
-| Corn tortillas, 30 ct | 1 | labeled GF | | not added |
-| Sour cream, 8 oz | 1 | pasteurized | | not added |
-| Shredded Monterey Jack, 8 oz | 1 | pasteurized | | not added |
-| Frozen corn | 1 bag | plain | | not added |
-| Frozen peas | 1 bag | plain | | not added |
-| Frozen mixed vegetables | 2 bags | plain, no sauce | | not added |
-| Tater tots, ~32 oz | 1 | **"gluten-free" printed on the bag** | | not added |
-| Yellow onions | 1 bag | | | not added |
-| **GF Tamari Lite (50% less sodium)** | 1 | labeled GF | San-J Tamari Lite (or San-J 28% less) | not added |
-| Ginger paste (tube) | 1 | no wheat; check sodium | | not added |
-| Smart Balance or Melt | 1 | | | not added |
-| **Steam-in-bag plain vegetables** | 4 | no sauce or seasoning | broccoli / green beans | not added |
-| Apple juice | 2 | pasteurized | | not added |
-| Grape juice | 2 | pasteurized | | not added |
-| Red Gatorade, Fruit Punch | 1 multipack | | | not added |
-| **Ranch dressing** | 1 | labeled GF; no anchovy/fish/Worcestershire | | not added |
-| **Blue cheese dressing** | 1 | labeled GF; no anchovy/fish/Worcestershire; pasteurized cheese. **Leave out if unconfirmed** | | not added |
-| **Napkins** | 1 pack | | | not added |
-| Foil pans **with lids**, ~2¼ lb oblong | **12 total** (not 12 extra) | lids included | | not added |
-| Gallon freezer bags | 1 box | freezer type | | not added |
-| Instant-read thermometer | 1 | **only if you don't own one** | | not added |
+### In the cart (17 lines)
+| Item | Qty | Price | Deal / check |
+|---|---|---|---|
+| Swanson **Unsalted** Chicken Broth 32 oz | 3 | $2.50 ea | sale, 2 for $5 |
+| Simple Truth Organic **Coconut Aminos** 10 oz | 1 | $5.99 | replaces tamari (tamari lists alcohol). 500 mg Na/Tbsp |
+| Herdez Salsa Verde **Mild** 16 oz + 7 oz | 1 + 1 | $2.99 + $1.25 | 23 oz covers 2½ cups. The 24 oz jar isn't available for pickup |
+| Barilla **Gluten Free Spaghetti** 12 oz | 1 | $2.99 | GF penne out of stock |
+| Bob's Red Mill **GF 1-to-1** Baking Flour 22 oz | 1 | $5.99 | |
+| Bob's Red Mill Nutritional Yeast 5 oz | 1 | $6.79 | |
+| Kroger Sour Cream 8 oz | 1 | $1.49 | |
+| Kroger Monterey Jack, shredded 8 oz | 1 | $2.00 | sale (was $2.49) |
+| Mission Super Soft **White Corn** Tortillas 30 ct | 1 | $2.49 | sale (was $2.89). Free from cereals, no wheat warning. The La Banderita and Kroger listings say "may contain wheat" |
+| Ore-Ida Tater Tots 32 oz | 1 | $5.29 | tagged Gluten Free. 450 mg Na per 3 oz |
+| Kroger Frozen Sweet Peas 12 oz | 1 | $1.25 | |
+| Kroger Frozen Super Sweet Corn 12 oz | 1 | $1.25 | |
+| Kroger Frozen Mixed Vegetables 32 oz | 1 | $3.19 | one bag is ~6 cups (need 4) |
+| Birds Eye Steamfresh Broccoli Cuts | 2 | $1.49 ea | plain |
+| Birds Eye Steamfresh Cut Green Beans | 2 | $1.49 ea | plain |
+| Simple Truth Ginger Paste 3.5 oz | 1 | $3.49 | 0 mg Na per tsp; free from cereals |
+| Kroger 100% Grape Juice 64 oz | 2 | $3.29 ea | shelf-stable (pasteurized) |
+
+### Still to add (site outage interrupted)
+| Item | Qty | Note |
+|---|---|---|
+| **Kroger 100% Apple Juice 64 oz** | 2 | **Buy 1, Get 1 Free**: 2 for $2.99 |
+| **2% milk ½ gallon** (King Soopers brand) | 1 | **Buy 1, Get 1 Free** ($2.59), so a 2nd is free if you'll use it |
+| Beef for stir-fry, plain | 2 lb | |
+| Yellow onions | 2 | |
+| Red Gatorade Fruit Punch | 1 multipack | |
+| Ranch dressing | 1 | GF; no anchovy/fish/Worcestershire |
+| Blue cheese dressing | 1 | GF; no anchovy/fish/Worcestershire; pasteurized. Leave out if unconfirmed |
+| Napkins | 1 pack | |
+| Foil pans **with lids**, ~2¼ lb oblong | 12 total | |
+| Gallon freezer bags | 1 box | |
+| **Butter substitute: DECISION NEEDED** | 1 | **Smart Balance spread and Melt don't come up for pickup at this store.** Earth Balance Original ($5.79) is the closest plant-based match. Not added without Kovas's OK |
+| Digital coupons | — | Not clipped yet |
+| Substitution setting | — | "Allow substitutions" is shown in the cart. Set it so GF items can't be swapped for non-GF items |
 
 **Removed or changed vs. v1:**
 - Regular broth → unsalted.
-- Regular tamari → Tamari Lite.
+- Regular tamari → **coconut aminos** (tamari lists alcohol as an ingredient).
 - Added: 4 steam-in-bag vegetables, ranch, blue cheese dressing, napkins, and a thermometer if needed.
 
 **Substitution rule:**
