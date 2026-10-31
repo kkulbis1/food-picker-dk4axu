@@ -1,0 +1,1196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex">
+<title>Kovas &amp; Lynsey's Food</title>
+<style>
+:root{
+  --cream:#FBF5EE; --paper:#FFFDF9; --ink:#2D2A26; --soft:#6E655C; --line:#EADFD2;
+  --terra:#C8553D; --terra-d:#A8432E; --sage:#5E8C6A; --butter:#F2C14E; --plum:#7A4E6D;
+  --love:#D6455D; --like:#3E8E5E; --maybe:#C99A2E; --no:#7B7570;
+  --serif:"Iowan Old Style","New York","Palatino Linotype",Palatino,Georgia,serif;
+  --sans:-apple-system,BlinkMacSystemFont,"SF Pro Text","Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+  --r:22px; --shadow:0 14px 40px -18px rgba(80,45,20,.35);
+}
+*{box-sizing:border-box}
+html,body{margin:0;background:var(--cream);color:var(--ink);font-family:var(--sans);-webkit-text-size-adjust:100%}
+body{min-height:100vh;padding-bottom:env(safe-area-inset-bottom)}
+button{font:inherit;color:inherit;cursor:pointer;-webkit-tap-highlight-color:transparent}
+h1,h2,h3{font-family:var(--serif);font-weight:600;letter-spacing:-.01em;margin:0}
+.wrap{max-width:560px;margin:0 auto;padding:0 16px 40px}
+
+/* header */
+header.top{position:sticky;top:0;z-index:20;background:rgba(251,245,238,.92);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+header.top .in{max-width:560px;margin:0 auto;padding:10px 16px;display:flex;align-items:center;gap:8px}
+.brand{font-family:var(--serif);font-size:17px;font-weight:600;flex:1;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.pill{font-size:12px;padding:5px 9px;border-radius:99px;background:#E8F1EA;color:#2F6B43;white-space:nowrap}
+.pill.bad{background:#FBE3DE;color:#9A2F1C;font-weight:600}
+.btn-mini{border:1px solid var(--line);background:var(--paper);border-radius:12px;padding:7px 10px;font-size:13px;font-weight:600;white-space:nowrap}
+
+/* generic */
+.btn{display:block;width:100%;border:0;border-radius:16px;padding:16px 18px;font-size:17px;font-weight:650;background:var(--terra);color:#fff;box-shadow:0 8px 20px -10px rgba(200,85,61,.8)}
+.btn:active{transform:translateY(1px)}
+.btn.ghost{background:var(--paper);color:var(--ink);border:1.5px solid var(--line);box-shadow:none}
+.btn.sage{background:var(--sage);box-shadow:0 8px 20px -10px rgba(94,140,106,.8)}
+.btn.huge{font-size:20px;padding:20px}
+.row{display:flex;gap:10px}
+.row>*{flex:1}
+.muted{color:var(--soft)}
+.small{font-size:13px}
+.panel{background:var(--paper);border:1px solid var(--line);border-radius:var(--r);padding:18px;margin:14px 0;box-shadow:0 2px 0 rgba(0,0,0,.02)}
+.link{background:none;border:0;color:var(--terra-d);text-decoration:underline;padding:6px 0;font-size:14px}
+.stack>*+*{margin-top:10px}
+
+/* welcome */
+.hero{padding:34px 4px 6px;text-align:center}
+.hero .plate{font-size:58px;line-height:1;margin-bottom:12px}
+.hero h1{font-size:34px;line-height:1.1}
+.hero p{font-size:17px;line-height:1.5;color:var(--soft);margin:12px auto 0;max-width:420px}
+.steps{list-style:none;padding:0;margin:0}
+.steps li{display:flex;gap:12px;align-items:center;padding:10px 0;border-bottom:1px dashed var(--line)}
+.steps li:last-child{border:0}
+.steps .n{width:32px;height:32px;border-radius:50%;background:var(--butter);display:grid;place-items:center;font-weight:700;flex:none}
+
+/* interview */
+.ihead{padding:20px 2px 4px}
+.ihead .kicker{font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--terra-d);font-weight:700}
+.ihead h2{font-size:26px;margin-top:4px}
+.dots{display:flex;gap:6px;margin-top:10px}
+.dots i{height:5px;flex:1;border-radius:9px;background:var(--line)}
+.dots i.on{background:var(--terra)}
+.q{margin:14px 0}
+.q h3{font-size:18px;margin-bottom:4px}
+.q .hint{font-size:13px;color:var(--soft);margin:0 0 10px}
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.chip{border:1.5px solid var(--line);background:#fff;border-radius:99px;padding:10px 14px;font-size:15px;min-height:44px;transition:background .12s,border-color .12s}
+.chip[data-state="yes"]{background:#E7F2EA;border-color:var(--sage);color:#1F5132;font-weight:600}
+.chip[data-state="yes"]::before{content:"💚 "}
+.chip[data-state="no"]{background:#F6E1DC;border-color:#D58E7E;color:#8A2E1C;text-decoration:line-through;text-decoration-thickness:1.5px}
+.chip[data-state="no"]::before{content:"🚫 ";display:inline-block;text-decoration:none}
+.chip.sel{background:#E7F2EA;border-color:var(--sage);color:#1F5132;font-weight:600}
+.chip.sel::before{content:"✓ "}
+textarea,input[type=text]{width:100%;border:1.5px solid var(--line);border-radius:14px;padding:12px 14px;font:inherit;font-size:16px;background:#fff;color:var(--ink);resize:vertical}
+textarea{min-height:76px}
+textarea:focus,input:focus{outline:none;border-color:var(--terra)}
+.other{margin-top:10px}
+.lv{display:flex;align-items:center;gap:8px;padding:8px 0;border-bottom:1px solid var(--line)}
+.lv:last-of-type{border-bottom:0}
+.lv .lbl{flex:1;min-width:0;font-size:15px;font-weight:550;line-height:1.25}
+.seg{display:flex;gap:4px;flex:none}
+.seg button{border:1.5px solid var(--line);background:#fff;border-radius:11px;width:50px;height:48px;padding:0;font-size:10.5px;font-weight:650;color:var(--soft);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:1px;line-height:1.1}
+.seg button .e{font-size:17px}
+.seg button.on{color:var(--ink)}
+.seg button.on[data-v=love]{background:#FBE4E8;border-color:var(--love)}
+.seg button.on[data-v=like]{background:#E5F2E9;border-color:var(--like)}
+.seg button.on[data-v=fine]{background:#FFF4D6;border-color:var(--maybe)}
+.seg button.on[data-v=dislike]{background:#EEEAE6;border-color:var(--no)}
+.legend{display:flex;flex-wrap:wrap;gap:4px 12px;font-size:13px;color:var(--soft);margin:0 0 6px}
+.notewrap{margin-top:12px}
+.notebtn{width:100%;border:1.5px dashed #D9C9B6;background:transparent;border-radius:14px;min-height:46px;font-size:15px;font-weight:600;color:var(--terra-d)}
+.notewrap textarea{min-height:64px;font-size:16px}
+.notewrap .small{margin:4px 2px 0}
+.rnote{margin-top:6px;font-size:14px;padding:8px 10px;border-radius:10px}
+.notetxt{font-size:12.5px;color:var(--terra-d);font-style:italic;display:block;margin-top:2px}
+.rnbtn{background:none;border:0;color:var(--terra-d);font-size:12px;padding:2px 0;text-decoration:underline}
+@media(max-width:380px){.seg button{width:44px;height:46px;font-size:9.5px}.lv .lbl{font-size:14px}}
+.rules{list-style:none;padding:0;margin:0 0 6px;display:grid;gap:8px}
+.rules li{display:flex;gap:10px;align-items:center;background:#F3EEE7;border-radius:12px;padding:10px 12px;font-size:15px}
+.rules li b{font-weight:650}
+.lock{margin-left:auto;font-size:12px;color:var(--soft)}
+.prefs{font-size:14px;color:var(--soft);line-height:1.5;margin:10px 0 0}
+.navbar{display:flex;gap:10px;margin-top:22px}
+.navbar .btn.ghost{flex:0 0 34%}
+
+/* cards */
+.deckhead{display:flex;align-items:center;justify-content:space-between;padding:16px 2px 8px;gap:10px}
+.progress{height:8px;background:var(--line);border-radius:9px;overflow:hidden;margin:0 2px}
+.progress>div{height:100%;background:linear-gradient(90deg,var(--butter),var(--terra));border-radius:9px;transition:width .25s}
+.card{position:relative;margin:14px 0 0;border-radius:28px;background:var(--paper);box-shadow:var(--shadow);overflow:hidden;touch-action:pan-y;user-select:none;-webkit-user-select:none;transition:transform .18s ease,opacity .18s}
+.card .art{height:190px;display:grid;place-items:center;position:relative}
+.card .art .em{font-size:96px;line-height:1;filter:drop-shadow(0 10px 14px rgba(0,0,0,.18))}
+.card .art .badge{position:absolute;left:14px;top:14px;background:rgba(255,255,255,.85);border-radius:99px;padding:6px 11px;font-size:12px;font-weight:700;letter-spacing:.06em;text-transform:uppercase}
+.card .art .cur{position:absolute;right:14px;top:14px;background:#fff;border-radius:99px;padding:6px 11px;font-size:13px;font-weight:650}
+.cat-b .art{background:radial-gradient(circle at 30% 20%,#FFF2CC,#F6C97A 60%,#EFA95A)}
+.cat-l .art{background:radial-gradient(circle at 30% 20%,#EEF5E4,#BFD8A8 60%,#8DB98A)}
+.cat-d .art{background:radial-gradient(circle at 30% 20%,#FBE2D6,#E79A7C 60%,#C8553D)}
+.cat-s .art{background:radial-gradient(circle at 30% 20%,#F8E3EE,#DDA5C3 60%,#A86C8E)}
+.card .body{padding:18px 20px 20px}
+.card h2{font-size:27px;line-height:1.12}
+.card p.desc{font-size:17px;line-height:1.45;color:#4A433C;margin:8px 0 14px}
+.facts{display:flex;flex-wrap:wrap;gap:6px}
+.facts span{font-size:13px;background:#F3EEE7;border-radius:99px;padding:6px 10px;color:#5A5148}
+.rate{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin-top:16px}
+.rate button{border:0;border-radius:18px;min-height:78px;background:#fff;box-shadow:0 6px 16px -10px rgba(0,0,0,.35);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:4px;font-size:13px;font-weight:650;border:2px solid transparent}
+.rate button .e{font-size:30px;line-height:1}
+.rate button.love{color:var(--love)} .rate button.like{color:var(--like)} .rate button.maybe{color:#8F6A12} .rate button.no{color:var(--no)}
+.rate button.on{border-color:currentColor;background:#FFF7F0}
+.rate button:active{transform:scale(.96)}
+.subnav{display:flex;gap:8px;margin-top:10px}
+.subnav button{flex:1;border:1.5px solid var(--line);background:var(--paper);border-radius:14px;min-height:48px;font-size:15px;font-weight:600}
+.subnav button:disabled{opacity:.4}
+.gfnote{font-size:12.5px;color:var(--soft);text-align:center;margin:14px 8px 0;line-height:1.4}
+.done{text-align:center;padding:26px 18px}
+.done .big{font-size:56px}
+
+/* review */
+.group{margin:16px 0}
+.group h3{font-size:20px;display:flex;align-items:center;gap:8px}
+.group h3 .ct{font-family:var(--sans);font-size:13px;background:var(--line);border-radius:99px;padding:2px 9px;color:var(--soft)}
+.item{display:flex;align-items:center;gap:10px;padding:10px 0;border-bottom:1px solid var(--line)}
+.item:last-child{border-bottom:0}
+.item .ie{font-size:26px;flex:none;width:34px;text-align:center}
+.item .nm{flex:1;min-width:0}
+.item .nm b{display:block;font-size:15px;font-weight:650}
+.item .nm span{font-size:12px;color:var(--soft)}
+.mini{display:flex;gap:3px;flex:none}
+.mini button{border:1.5px solid var(--line);background:#fff;border-radius:10px;width:34px;height:34px;font-size:16px;padding:0;display:grid;place-items:center}
+.mini button.on{border-color:var(--terra);background:#FFF1EA}
+details summary{cursor:pointer;font-weight:650;padding:6px 0}
+.answers dt{font-weight:650;font-size:14px;margin-top:10px}
+.answers dd{margin:2px 0 0;font-size:14px;color:#4A433C;white-space:pre-wrap}
+.callout{background:#FFF6DC;border:1px solid #F0D98F;border-radius:16px;padding:14px;font-size:14px;line-height:1.45}
+.callout.warn{background:#FBE3DE;border-color:#E9A898}
+
+/* modal + toast */
+.modal-bg{position:fixed;inset:0;background:rgba(30,20,10,.45);display:flex;align-items:flex-end;justify-content:center;z-index:50;padding:16px}
+.modal{background:var(--paper);border-radius:24px;max-width:520px;width:100%;padding:22px;box-shadow:var(--shadow);max-height:85vh;overflow:auto}
+.modal h3{font-size:22px;margin-bottom:8px}
+.modal p{line-height:1.45}
+@media(min-width:600px){.modal-bg{align-items:center}}
+.toast{position:fixed;left:50%;bottom:calc(18px + env(safe-area-inset-bottom));transform:translateX(-50%);background:var(--ink);color:#fff;padding:12px 16px;border-radius:14px;font-size:14px;z-index:60;max-width:92vw;box-shadow:var(--shadow);opacity:0;transition:opacity .2s;pointer-events:none}
+.toast.show{opacity:1}
+footer.foot{text-align:center;padding:10px 16px 30px;font-size:13px;color:var(--soft)}
+footer.foot button{background:none;border:0;color:var(--soft);text-decoration:underline;font-size:13px;padding:6px}
+@media(max-width:380px){.rate button{min-height:70px;font-size:11.5px}.rate button .e{font-size:26px}.card h2{font-size:24px}.brand{font-size:15px}}
+@media(prefers-reduced-motion:reduce){*{transition:none!important}}
+</style>
+</head>
+<body>
+<header class="top"><div class="in">
+  <div class="brand">🍽️ Kovas &amp; Lynsey's Food</div>
+  <span id="savePill" class="pill">…</span>
+  <button class="btn-mini" data-act="backup" title="Download a backup file of everything so far">💾 Backup</button>
+</div></header>
+<main class="wrap" id="app"></main>
+<footer class="foot">
+  <button data-act="import">Restore from backup file</button> ·
+  <button data-act="summaryTxt">Download readable summary</button> ·
+  <button data-act="reset">Start over</button>
+  <div class="small" style="margin-top:6px">Works offline. Nothing is sent anywhere — answers stay on this device until you download them.</div>
+</footer>
+<input type="file" id="importFile" accept=".json,application/json" hidden>
+<div id="toast" class="toast" role="status" aria-live="polite"></div>
+<div id="modalRoot"></div>
+
+<script>
+"use strict";
+/* ============================================================
+   Kovas & Lynsey's Food Picker — single-file, offline.
+   Data schema: kl-food-picker/v1 (see buildExport()).
+   ============================================================ */
+const SCHEMA = "kl-food-picker/v1";
+const APP_VERSION = "1.1.0";
+const LS_KEY = "klFoodPicker.v1";
+const LS_PREV = "klFoodPicker.v1.previous";
+const DECK_QUOTA = { b: 14, l: 12, d: 20, s: 6 };   // initial deck ≈ 52 meals
+const MORE_COUNT = 20;
+
+const CATS = { b: "Breakfast", l: "Lunch", d: "Dinner", s: "Snack" };
+const FREEZE = { F: "❄️ Freezes well", P: "❄️ Freeze components", N: "Best fresh" };
+const RATINGS = {
+  love:    { e: "❤️", l: "Love it" },
+  like:    { e: "👍", l: "Sounds good" },
+  maybe:   { e: "🤔", l: "Maybe" },
+  no:      { e: "🚫", l: "No thanks" },
+  skipped: { e: "⏭️", l: "Skipped" }
+};
+const LEVELS = {
+  love:    { e: "❤️", l: "Love",    w: 1 },
+  like:    { e: "👍", l: "Like",    w: 0.5 },
+  fine:    { e: "👌", l: "Fine",    w: 0 },
+  dislike: { e: "👎", l: "Dislike", w: null }
+};
+const HOUSE_RULES = [
+  ["🌾", "Strictly gluten-free", "every recipe uses GF pasta, bread, flour, tortillas & tamari"],
+  ["🥜", "No peanuts", ""],
+  ["🦐", "No shellfish", ""],
+  ["🤰", "Pregnancy-safe", "meats, eggs & fish fully cooked; pasteurized dairy only"],
+  ["🔥", "No grill needed", ""],
+  ["🫘", "No black beans", ""],
+  ["🌶️", "Nothing very spicy", ""]
+];
+const HOUSE_PREFS = "Also planned around: moderate dairy, minimal pork, no red-tomato-sauce meals (vodka sauce is OK), and about 30 minutes or less of hands-on prep.";
+
+/* ---------- Meal catalog ----------
+   id | emoji | name | description | tags | hands-on minutes | freezer (F/P/N) | main equipment
+   id prefix: b=breakfast l=lunch d=dinner s=snack. IDs are stable — never renumber. */
+const RAW_MEALS = `
+b001|🧇|Classic Buttermilk Waffles|Crisp outside, fluffy inside. Freeze a stack and toast one straight from frozen.|waffle,american,sweet,egg|20|F|Waffle maker
+b002|🫐|Blueberry Lemon Waffles|Bursting blueberries with bright lemon zest and a drizzle of maple.|waffle,american,sweet,fruit,lemon,citrus|20|F|Waffle maker
+b003|🍌|Banana Oat Waffles|Blender batter of GF oats and ripe banana — hearty, lightly sweet.|waffle,oats,sweet,fruit|15|F|Blender, waffle maker
+b004|🎃|Pumpkin Spice Waffles|Cozy cinnamon, nutmeg and pumpkin with a crisp edge. Pure autumn.|waffle,american,sweet,squash|20|F|Waffle maker
+b005|🍫|Chocolate Chip Waffles|A weekend treat that reheats perfectly in the toaster.|waffle,american,sweet|20|F|Waffle maker
+b006|🧀|Cheddar Chive Savory Waffles|Sharp cheddar and chives — great with a fried-through egg on top.|waffle,american,savory,cheesy,egg|20|F|Waffle maker
+b007|💪|Greek Yogurt Protein Waffles|Extra protein from yogurt and eggs to keep you full all morning.|waffle,protein,egg,sweet|15|F|Blender, waffle maker
+b008|🍠|Sweet Potato Cinnamon Waffles|Naturally sweet, tender waffles with warm spice.|waffle,sweetpotato,sweet|20|F|Waffle maker
+b009|🥔|Crispy Hash Brown Waffles|Shredded potatoes pressed golden in the waffle iron. Savory and crunchy.|waffle,potato,savory,crispy|15|F|Waffle maker
+b010|🍞|Cinnamon Swirl Waffles|Brown-sugar cinnamon ribbons like a cinnamon roll in waffle form.|waffle,sweet,american|20|F|Waffle maker
+b011|🌯|Egg & Cheese Breakfast Burritos|Soft-scrambled (cooked-through) eggs and cheddar in GF tortillas. Grab-and-go from the freezer.|burrito,egg,cheesy,mexican,american|30|F|Skillet, microwave
+b012|🌯|Chicken Sausage, Potato & Egg Burritos|Hearty burritos with crispy potatoes and mild chicken sausage.|burrito,egg,chicken,potato,mexican|30|F|Skillet, air fryer
+b013|🥬|Veggie Egg Burritos|Spinach, peppers and eggs with a little cheese — lighter but filling.|burrito,egg,spinach,peppers,veg|25|F|Skillet
+b014|🥓|Turkey Bacon & Hash Brown Burritos|Smoky turkey bacon, hash browns and eggs wrapped tight.|burrito,egg,turkey,potato,crispy|30|F|Air fryer, skillet
+b015|🥪|Freezer Egg Sandwiches|Baked egg patties with cheese on GF English muffins. Microwave and go.|sandwich,egg,cheesy,american|25|F|Oven, microwave
+b016|🥪|Turkey Sausage Breakfast Sandwiches|Homemade herby turkey sausage patty, egg and cheese.|sandwich,egg,turkey,american|30|F|Oven
+b017|🥚|Spinach & Feta Egg Bites|Silky café-style egg bites made in the sous vide or pressure cooker.|eggbite,egg,spinach,mediterranean|15|F|Sous vide or pressure cooker
+b018|🥚|Turkey Bacon & Gruyère Egg Bites|Velvety, savory, high-protein bites you can reheat in 60 seconds.|eggbite,egg,turkey,cheesy|15|F|Sous vide or pressure cooker
+b019|🫑|Roasted Red Pepper Egg Bites|Sweet peppers and mozzarella in tender egg bites.|eggbite,egg,peppers|15|F|Sous vide or pressure cooker
+b020|🥧|Crustless Broccoli Cheddar Quiche|All the comfort of quiche, naturally gluten-free. Slices freeze well.|quiche,egg,broccoli,cheesy|15|F|Oven
+b021|🍄|Spinach Mushroom Frittata|A big sheet-pan frittata cut into squares for the week.|quiche,egg,spinach,mushroom,veg|15|F|Oven
+b022|🍳|Sweet Potato & Chicken Sausage Hash|Sheet-pan hash with peppers and onions — top with a cooked-through egg.|hash,sweetpotato,chicken,peppers,savory|15|P|Oven
+b023|🥘|Hash Brown Breakfast Casserole|Eggs, turkey sausage, hash browns and cheese baked into a crowd-pleaser.|hash,casserole,egg,turkey,potato,cheesy,american|20|F|Oven
+b024|🥞|Sheet-Pan Pancakes|One big GF pancake with berries, cut into squares. No flipping.|pancake,sweet,fruit,american|10|F|Oven
+b025|🍌|Banana Oat Blender Pancakes|Three-ingredient-style pancakes blended in seconds.|pancake,oats,fruit,sweet|15|F|Blender, skillet
+b026|🥞|Fluffy Buttermilk Pancakes|Tall, tender GF pancakes — make a double batch for the freezer.|pancake,american,sweet|20|F|Skillet
+b027|🍞|Cinnamon French Toast Bake|GF bread baked in a vanilla-cinnamon custard until fully set. Great for guests.|frenchtoast,casserole,sweet,egg|15|F|Oven
+b028|🍟|Air-Fryer French Toast Sticks|Dunkable, crispy sticks that reheat in the toaster oven.|frenchtoast,sweet,crispy,egg|20|F|Air fryer
+b029|🍎|Apple Cinnamon Baked Oatmeal Cups|Portable oatmeal cups with diced apple. Like a soft muffin.|oats,fruit,sweet,baked|15|F|Oven
+b030|🫐|Blueberry Baked Oatmeal|A spoonable, cake-like oat bake with bursting blueberries.|oats,fruit,sweet,baked|10|F|Oven
+b031|🥣|Overnight Oats Jars|GF oats, milk, chia and fruit — five flavors, zero cooking.|oats,fruit,sweet,fresh|10|N|None
+b032|🧁|Banana Muffins|Moist, simple GF banana muffins with a crackly top.|muffin,baked,sweet,fruit|15|F|Stand mixer, oven
+b033|🥕|Morning Glory Muffins|Carrot, apple, raisins and warm spice. Hearty and wholesome.|muffin,baked,sweet,carrot,fruit|20|F|Oven
+b034|🍋|Lemon Poppy Seed Muffins|Bright, tender and bakery-style.|muffin,baked,sweet,lemon,citrus|15|F|Stand mixer, oven
+b035|🎃|Pumpkin Chocolate Chip Muffins|Soft, spiced and studded with chocolate.|muffin,baked,sweet,squash|15|F|Oven
+b036|🍞|Classic Banana Bread|A GF loaf to slice, freeze and toast with butter.|muffin,baked,sweet,fruit|15|F|Oven
+b037|🍓|Yogurt Parfaits with GF Granola|Layers of creamy yogurt, berries and crunchy homemade granola.|parfait,fruit,sweet,fresh,protein|10|N|Oven (granola)
+b038|🥤|Freezer Smoothie Packs|Pre-portioned berries, banana and spinach — blend with milk in a minute.|smoothie,fruit,spinach,frozen,fresh|15|F|Blender
+b039|🥣|Creamy Steel-Cut Oats|Hands-off pressure-cooker oats; portion and top with fruit and maple.|oats,sweet,fruit|5|F|Pressure cooker
+b040|🍠|Sweet Potato Egg Breakfast Bowls|Roasted sweet potato, cooked-through eggs, avocado and cheese.|egg,sweetpotato,avocado,savory|20|P|Oven
+b041|🌮|Soft Scrambled Breakfast Tacos|Eggs cooked through, cheese and avocado on warm corn tortillas.|egg,mexican,avocado,cheesy|15|N|Skillet
+b042|🥔|Hash Brown Egg Cups|Crispy potato nests with a fully baked egg and cheese inside.|egg,potato,crispy,cheesy,savory|20|F|Oven
+b043|🥞|Cottage Cheese Protein Pancakes|High-protein, custardy pancakes made in the blender.|pancake,protein,egg,sweet|15|F|Blender, skillet
+b044|☕|Cinnamon Crumb Coffee Cake|Buttery GF coffee cake with a thick crumb topping.|baked,sweet,muffin,american|20|F|Stand mixer, oven
+b045|🍓|Strawberry Vanilla Chia Pudding|Make-ahead jars that taste like dessert. No cooking.|parfait,fruit,sweet,fresh|10|N|None
+b046|🧀|Egg & Cheese Breakfast Quesadillas|Crispy GF tortilla, melty cheese and eggs. Freeze in wedges.|egg,cheesy,mexican,crispy|15|F|Skillet
+b047|🍳|Mild Chilaquiles Verde Bake|Corn tortilla chips baked in salsa verde with eggs and cheese — gentle and mild.|egg,mexican,verde,cheesy,casserole|20|N|Oven
+b048|🍚|Chicken & Ginger Rice Congee|Soothing, silky rice porridge — easy on an unsettled stomach.|chicken,asian,soup,mushy|10|F|Pressure cooker
+b049|🥖|Spinach Cheddar Breakfast Strata|GF bread, eggs, spinach and cheese baked until set. Make the night before.|casserole,egg,spinach,cheesy,hash|15|F|Oven
+b050|🍐|Pear & Ginger Baked Oatmeal|Soft pears and a hint of ginger in a cozy oat bake.|oats,fruit,sweet,baked|10|F|Oven
+l001|🥙|Greek Chicken Rice Bowls|Lemon-oregano chicken, cucumber, olives and tzatziki over rice.|bowl,chicken,mediterranean,lemon,cucumber,fresh|25|P|Oven, rice cooker
+l002|🍱|Teriyaki Chicken Rice Bowls|Sticky-sweet GF teriyaki chicken with broccoli and rice.|bowl,chicken,asian,teriyaki,broccoli|20|F|Skillet, rice cooker
+l003|🥩|Beef Bulgogi Rice Bowls|Sweet-savory marinated beef with carrots and rice. Mild and kid-friendly.|bowl,beef,asian,carrot,teriyaki|20|F|Skillet, rice cooker
+l004|🌯|Chicken Burrito Bowls|Cilantro-lime rice, pinto beans, corn and tender chicken.|bowl,chicken,mexican,beans,corn|25|F|Pressure cooker, rice cooker
+l005|🧄|Honey Garlic Chicken & Broccoli|Glossy honey-garlic chicken with steamed broccoli over rice.|bowl,chicken,asian,teriyaki,broccoli,garlic|20|F|Skillet, rice cooker
+l006|🍜|Chicken Pho-Style Noodle Soup|Fragrant ginger-star anise broth, rice noodles and tender chicken.|soup,chicken,asian,ricenoodle|20|P|Pressure cooker
+l007|🍲|Classic Chicken Noodle Soup|The real deal with GF egg noodles, carrots and celery.|soup,chicken,american,carrot,pasta|20|P|Pressure cooker
+l008|🌾|Creamy Chicken Wild Rice Soup|Velvety and hearty with mushrooms and wild rice.|soup,chicken,creamy,mushroom,american|20|F|Pressure cooker
+l009|🥦|Broccoli Cheddar Soup|Thick, cheesy and comforting. A dairy-rich treat.|soup,broccoli,cheesy,creamy,rich,veg|20|F|Stovetop, immersion blender
+l010|🍋|Greek Lemon Chicken Rice Soup|Bright, silky lemon broth thickened the traditional way and simmered through.|soup,chicken,mediterranean,lemon,citrus|20|F|Stovetop
+l011|🥔|Potato Leek Soup|Simple, silky and soothing. Blends smooth in seconds.|soup,potato,creamy,veg,mushy|15|F|Pressure cooker, immersion blender
+l012|🎃|Roasted Butternut Squash Soup|Sweet, velvety and golden with a touch of sage.|soup,squash,creamy,veg|15|F|Oven, immersion blender
+l013|🟢|Split Pea Soup|Thick, hearty and smoky with diced turkey or kept meatless.|soup,beans,turkey,mushy|10|F|Pressure cooker
+l014|🥕|Golden Lentil Vegetable Soup|Brothy lentils, carrots and greens with lemon. Not tomato-based.|soup,beans,carrot,kale,veg,lemon|15|F|Pressure cooker
+l015|🍝|Italian Wedding Soup|Tiny meatballs, spinach and GF pasta in a savory broth.|soup,meatball,italian,spinach,pasta|30|F|Stovetop
+l016|🥔|Loaded Baked Potato Soup|Creamy potato soup with cheddar, chives and turkey bacon.|soup,potato,cheesy,creamy,turkey,american,rich|20|F|Pressure cooker
+l017|🫕|Creamy Chicken Enchilada Soup|Salsa-verde chicken soup with corn and a little cream cheese. Mild.|soup,chicken,mexican,verde,corn,creamy|15|F|Slow cooker
+l018|🥥|Coconut Chicken Soup (Tom Kha–style)|Fragrant lemongrass and coconut broth with mushrooms. Kept mild.|soup,chicken,asian,curry,mushroom,citrus|20|F|Stovetop
+l019|🥬|Tuscan Potato & Chicken Sausage Soup|Creamy broth, potatoes, kale and mild chicken sausage.|soup,chicken,potato,kale,italian,creamy|20|F|Pressure cooker
+l020|🥗|Classic Chicken Salad|Creamy chicken salad with grapes and celery — on GF bread or lettuce cups.|sandwich,chicken,american,fresh|15|N|None
+l021|🌯|Chicken Turkey-Bacon Ranch Wraps|Chicken, turkey bacon, cheddar and ranch in GF tortillas.|sandwich,chicken,turkey,cheesy,american|15|N|Air fryer
+l022|🥪|Hot Turkey & Cheese Melts|Toasted until steaming hot all the way through, with melted Swiss.|sandwich,turkey,cheesy,american|10|N|Toaster oven
+l023|🥚|Egg Salad Sandwiches|Hard-cooked eggs, a little mayo and dill on GF bread.|sandwich,egg,fresh|15|N|Stovetop
+l024|🧀|Chicken Quesadillas|Crispy GF tortillas, chicken, peppers and melty cheese. Freeze in wedges.|chicken,mexican,cheesy,peppers,crispy|15|F|Skillet
+l025|🫓|Pesto Chicken Flatbread|GF flatbread with pesto, chicken and mozzarella — crisp in the air fryer.|chicken,italian,pesto,cheesy|15|P|Air fryer
+l026|🍕|White Spinach Pizza|GF crust with garlic ricotta, spinach and mozzarella. No red sauce.|italian,spinach,cheesy,garlic,veg,rich|15|F|Oven
+l027|🥬|Chicken Lettuce Cups|Savory ground chicken with water chestnuts and GF hoisin.|chicken,asian,fresh,teriyaki|20|P|Skillet
+l028|🥗|Mediterranean Pasta Salad|GF rotini, chickpeas, cucumber, olives and feta with lemon dressing.|pastasalad,pasta,mediterranean,beans,cucumber,lemon,fresh|20|N|Stovetop
+l029|🌿|Lemon Herb Quinoa Chickpea Salad|Fresh, crunchy and protein-packed. Lasts all week in the fridge.|beans,mediterranean,lemon,cucumber,fresh,veg|15|N|Rice cooker
+l030|🍠|BBQ Chicken Stuffed Sweet Potatoes|Pulled BBQ chicken piled on roasted sweet potatoes.|chicken,bbq,sweetpotato,american|10|F|Slow cooker, oven
+l031|🥔|Broccoli Cheddar Twice-Baked Potatoes|Crispy skins with a fluffy, cheesy broccoli filling.|potato,broccoli,cheesy,american,veg|25|F|Oven
+l032|🍳|Chicken Fried Rice|Better than takeout with tamari, peas, carrots and egg.|chicken,asian,peas,carrot,egg|20|F|Skillet, rice cooker
+l033|🍜|Sesame Chicken Rice Noodles|Toasted-sesame noodles with chicken and crunchy veg. Peanut-free.|ricenoodle,chicken,asian,carrot,cucumber|20|P|Stovetop
+l034|🥧|Chicken Pot Pie Soup|All the flavor of pot pie in a creamy soup. Add GF biscuits on the side.|soup,chicken,creamy,peas,carrot,american|20|F|Pressure cooker
+l035|🌯|Bean & Cheese Burritos|Creamy refried pinto beans and cheese. A freezer classic.|burrito,beans,cheesy,mexican,veg|20|F|Microwave
+l036|🌯|Chicken & Rice Freezer Burritos|Salsa verde chicken, rice and cheese, rolled and frozen.|burrito,chicken,mexican,verde,cheesy|25|F|Slow cooker
+l037|🧆|Baked Falafel Bowls|Herby chickpea falafel with rice, cucumber and tahini.|bowl,beans,mediterranean,cucumber,veg,crispy|25|F|Food processor, air fryer
+l038|🐟|Salmon Rice Bowls|Flaky baked salmon, rice, cucumber and avocado with a light glaze.|bowl,salmon,asian,cucumber,avocado|15|N|Oven, rice cooker
+l039|🍱|Chicken Katsu Bowls|Crispy GF panko chicken cutlets with a sweet-tangy sauce.|bowl,chicken,asian,crispy|30|F|Air fryer
+l040|🍔|Pesto Meatball Sliders|Mini meatballs with pesto and provolone on GF slider buns.|meatball,sandwich,italian,pesto,cheesy|25|F|Oven
+l041|🌿|Green Minestrone with Pesto|Spring vegetables, white beans and GF pasta in a light, brothy soup.|soup,italian,pesto,zucchini,greenbeans,beans,veg,pasta|20|F|Pressure cooker
+l042|🥗|Chicken Cobb Bowls|Chicken, hard-cooked egg, avocado, turkey bacon and corn.|chicken,egg,avocado,turkey,corn,fresh|20|N|Air fryer
+l043|🌽|Street Corn Chicken Bowls|Charred-style corn, lime crema, cotija and chicken. Mild and creamy.|bowl,chicken,mexican,corn,citrus|20|P|Skillet, rice cooker
+l044|🥟|Chicken & Dumplings|Fluffy GF dumplings in a creamy chicken stew.|stew,chicken,american,creamy,carrot|25|F|Stovetop
+l045|🍚|Mujadara (Lentils & Rice)|Spiced lentils and rice under crispy caramelized onions.|beans,mediterranean,veg,bowl|15|F|Pressure cooker
+l046|🍝|Chicken Gnocchi Soup|Creamy soup with pillowy GF gnocchi, spinach and chicken.|soup,chicken,gnocchi,spinach,creamy,italian|20|P|Stovetop
+l047|🍠|Sweet Potato & Chickpea Bowls|Roasted sweet potato, chickpeas, greens and a maple-tahini drizzle.|bowl,sweetpotato,beans,kale,veg|20|P|Oven
+l048|🐔|Albóndigas Soup|Mexican meatball soup in a light broth with rice, carrots and zucchini. Mild.|soup,meatball,mexican,carrot,zucchini|30|F|Stovetop
+d001|🧀|White Chicken Lasagna|Layers of chicken, spinach and a light garlic-parmesan white sauce.|lasagna,pasta,chicken,spinach,garlicparm,creamy,italian,casserole|30|F|Oven
+d002|🍸|Vodka Sauce Lasagna|Silky pink vodka sauce, ricotta and mozzarella. Creamy, rosy and rich.|lasagna,pasta,vodka,cheesy,italian,casserole,rich|30|F|Oven
+d003|🌿|Pesto Spinach Lasagna|Bright basil pesto, spinach and ricotta. Fresh and green.|lasagna,pasta,pesto,spinach,veg,italian,casserole|25|F|Oven
+d004|🎃|Butternut Squash & Sage Lasagna|Sweet roasted squash, brown butter and sage. Elegant and cozy.|lasagna,pasta,squash,creamy,veg,italian,casserole|30|F|Oven
+d005|🍄|Mushroom & Spinach Lasagna|Earthy mushrooms and spinach in a creamy béchamel.|lasagna,pasta,mushroom,spinach,creamy,veg,italian,casserole|30|F|Oven
+d006|🥘|Chicken Florentine Lasagna Roll-Ups|Individual roll-ups — perfect single portions for the freezer.|lasagna,pasta,chicken,spinach,creamy,italian|30|F|Oven
+d007|🥩|White Bolognese Lasagna|Slow-simmered turkey or beef ragù bianco with parmesan cream.|lasagna,pasta,turkey,beef,creamy,italian,casserole,rich|30|F|Slow cooker, oven
+d008|🌮|Salsa Verde Chicken Tortilla Lasagna|Mexican-style stacked corn tortillas, chicken, salsa verde and cheese.|lasagna,mexican,chicken,verde,cheesy,casserole|25|F|Oven
+d009|🥒|Lighter Zucchini Ribbon Lasagna|Half noodles, half zucchini ribbons with ricotta and pesto.|lasagna,pasta,zucchini,pesto,veg,italian|30|P|Oven
+d010|🍲|Slow-Cooker White Lasagna|Dump-and-go layered lasagna with Italian chicken sausage and cream sauce.|lasagna,pasta,chicken,creamy,italian,casserole|20|F|Slow cooker
+d011|🍸|Penne alla Vodka with Chicken|Creamy vodka sauce clinging to GF penne with tender chicken.|pasta,vodka,chicken,italian,creamy|20|F|Stovetop
+d012|🌞|Creamy Tuscan Chicken Pasta|Sun-dried tomatoes, spinach and parmesan cream. Not a red sauce.|pasta,chicken,spinach,creamy,italian,garlicparm|20|F|Stovetop
+d013|🧈|Lighter Chicken Alfredo|Classic alfredo made a bit lighter, with broccoli.|pasta,alfredo,creamy,chicken,broccoli,italian,rich|20|P|Stovetop
+d014|🌿|Pesto Chicken Pasta|GF pasta tossed with basil pesto, chicken and peas.|pasta,pesto,chicken,peas,italian|15|F|Stovetop
+d015|🍋|Lemon Garlic Chicken Pasta|Bright lemon, garlic and parmesan — light and zingy.|pasta,lemon,garlicparm,chicken,garlic,italian,citrus|20|F|Stovetop
+d016|🍸|Baked Ziti alla Vodka|Bubbly, cheesy ziti in vodka sauce. A big-batch hosting hero.|pasta,ziti,pastabake,vodka,cheesy,italian,casserole|20|F|Oven
+d017|🐚|Spinach Ricotta Stuffed Shells|Jumbo GF shells with herbed ricotta, baked in vodka sauce.|pasta,shells,pastabake,vodka,spinach,cheesy,italian,veg|30|F|Oven
+d018|🧀|Baked Mac & Cheese|Golden-crusted, creamy three-cheese mac. Dairy-rich comfort.|pasta,mac,pastabake,cheesy,american,rich,casserole|20|F|Oven
+d019|🎃|Butternut Squash Mac & Cheese|Creamy, lighter mac with squash blended into the sauce.|pasta,mac,squash,cheesy,american|20|F|Blender, oven
+d020|🥩|Turkey Ragù Bianco with Pappardelle|Slow-simmered white meat sauce with herbs and parmesan.|pasta,turkey,italian,creamy|20|F|Slow cooker
+d021|🥦|Garlic Parmesan Chicken & Broccoli Ziti|Simple, satisfying, kid-friendly pasta bake.|pasta,ziti,pastabake,chicken,broccoli,garlicparm,italian,casserole|20|F|Oven
+d022|🍋|Chicken Piccata Pasta|Tender chicken in a lemon-caper butter sauce over GF pasta.|pasta,chicken,lemon,citrus,italian|25|F|Skillet
+d023|🌱|Pasta Primavera|Spring vegetables, garlic and parmesan in a light sauce.|pasta,zucchini,peppers,peas,garlicparm,veg,italian|20|P|Stovetop
+d024|🥬|Chicken Sausage & Broccoli Orecchiette|Garlicky, savory and fast.|pasta,chicken,broccoli,garlic,italian|20|F|Stovetop
+d025|🍝|Creamy Chicken Spaghetti|Pressure-cooker spaghetti in a creamy cheesy sauce — Southern comfort.|pasta,chicken,cheesy,creamy,american,casserole|15|F|Pressure cooker
+d026|🍄|Creamy Mushroom Chicken Pasta|Golden mushrooms, thyme and a silky parmesan cream.|pasta,mushroom,chicken,creamy,italian|20|F|Skillet
+d027|🫒|Spinach Artichoke Pasta Bake|The favorite dip, turned into dinner.|pasta,pastabake,spinach,artichoke,cheesy,creamy,veg,casserole,rich|20|F|Oven
+d028|🍋|Lemon Ricotta Pasta with Peas|Light, creamy and ready in 15 minutes.|pasta,lemon,peas,creamy,veg,italian,citrus|15|N|Stovetop
+d029|🍄|GF Gnocchi with Brown Butter & Sage|Pan-crisped gnocchi, chicken sausage and spinach.|gnocchi,pasta,chicken,spinach,italian,crispy|20|N|Skillet
+d030|🇸🇪|Swedish Meatballs & Mashed Potatoes|Tender meatballs in a creamy GF gravy over buttery mash.|meatball,beef,turkey,gravy,creamy,potato,american|30|F|Oven, pressure cooker
+d031|🍸|Turkey Meatballs in Vodka Sauce|Juicy baked turkey meatballs in pink vodka sauce over GF pasta.|meatball,turkey,vodka,pasta,italian|25|F|Oven
+d032|🌿|Chicken Pesto Meatballs|Pesto mixed right in — tender, green and great over rice or pasta.|meatball,chicken,pesto,italian|20|F|Oven
+d033|🇬🇷|Greek Turkey Meatballs with Tzatziki|Herby meatballs, lemon rice and cool tzatziki.|meatball,turkey,mediterranean,lemon,cucumber|25|F|Oven, rice cooker
+d034|🍯|Teriyaki Chicken Meatball Bowls|Sticky glazed meatballs with rice and steamed broccoli.|meatball,chicken,teriyaki,asian,bowl,broccoli|25|F|Oven, rice cooker
+d035|🍖|Slow-Cooker BBQ Meatballs|Sweet, tangy BBQ meatballs — great for hosting or over mashed potatoes.|meatball,beef,bbq,american|15|F|Slow cooker
+d036|🧄|Honey Garlic Meatballs|Glossy honey-garlic glaze over rice.|meatball,beef,teriyaki,garlic,asian|20|F|Oven
+d037|🥥|Coconut Curry Meatballs (Mild)|Tender chicken meatballs in a gentle coconut curry sauce.|meatball,chicken,curry,asian,creamy|25|F|Oven, stovetop
+d038|🍄|Meatball Stroganoff|Meatballs in a mushroom-sour cream sauce over GF egg noodles.|meatball,beef,mushroom,creamy,gravy,pasta|25|F|Stovetop
+d039|🥬|Spinach Feta Chicken Meatballs|Light, juicy and Mediterranean with lemon orzo-style rice.|meatball,chicken,spinach,mediterranean,lemon|20|F|Oven
+d040|🍽️|Sheet-Pan Meatballs & Roasted Vegetables|Everything on one pan: meatballs, potatoes, broccoli.|meatball,turkey,potato,broccoli,american|20|F|Oven
+d041|🥧|Chicken Pot Pie|Flaky GF crust over creamy chicken and vegetables.|chicken,american,creamy,peas,carrot,casserole,rich|30|F|Oven
+d042|🍋|Lemon Herb Sheet-Pan Chicken & Potatoes|Crispy chicken thighs, potatoes and green beans on one pan.|chicken,lemon,potato,greenbeans,mediterranean,citrus|15|F|Oven
+d043|🍯|Honey Garlic Chicken Thighs|Sticky-sweet slow-cooker thighs with rice.|chicken,teriyaki,garlic,asian|10|F|Slow cooker
+d044|🌞|Creamy Tuscan Chicken|Seared chicken in sun-dried tomato & spinach parmesan cream.|chicken,creamy,spinach,italian,garlicparm|20|F|Skillet
+d045|🥥|Mild Chicken Korma|Gentle, creamy, nutty-sweet Indian-inspired curry with rice. Not hot.|chicken,indian,curry,creamy|20|F|Pressure cooker
+d046|🥙|Sheet-Pan Chicken Shawarma Bowls|Warm-spiced chicken, rice, cucumber and garlic sauce.|chicken,mediterranean,bowl,cucumber,garlic|20|F|Oven
+d047|🍗|Air-Fryer GF Chicken Tenders|Crunchy, golden tenders with honey mustard. Reheat crisp.|chicken,american,crispy|25|F|Air fryer
+d048|🫑|Sheet-Pan Chicken Fajitas|Mild fajita chicken, peppers and onions with GF tortillas.|chicken,mexican,peppers|15|F|Oven
+d049|🌮|Salsa Verde Chicken Tacos|Slow-cooker shredded chicken in tangy salsa verde.|chicken,mexican,verde,citrus|10|F|Slow cooker
+d050|🫔|Chicken Enchiladas Verde|Corn tortillas, chicken, cheese and green sauce. Freezer favorite.|chicken,mexican,verde,cheesy,casserole|25|F|Oven
+d051|🤍|White Chicken Chili|Creamy white beans, chicken, corn and mild green chiles.|chicken,mexican,stew,soup,beans,corn,creamy|15|F|Pressure cooker
+d052|🥦|Cheesy Chicken, Broccoli & Rice Casserole|Ultimate comfort, all in one dish.|chicken,broccoli,cheesy,casserole,american,creamy|15|F|Oven
+d053|🍱|Pressure-Cooker Chicken Teriyaki|Juicy chicken in GF teriyaki in 20 minutes, mostly hands-off.|chicken,teriyaki,asian|10|F|Pressure cooker
+d054|🍊|Air-Fryer Orange Chicken|Crispy, sweet-citrus orange chicken. Takeout without the gluten.|chicken,asian,citrus,crispy,sweet|30|F|Air fryer
+d055|🌰|Sesame Chicken|Sweet, sticky sesame glaze over rice.|chicken,asian,teriyaki,sweet|25|F|Air fryer
+d056|🍄|Chicken Tetrazzini|Creamy mushroom chicken pasta bake with parmesan.|chicken,pasta,pastabake,mushroom,creamy,casserole|25|F|Oven
+d057|🥦|Chicken Divan|Chicken and broccoli in a cheesy creamy sauce, baked.|chicken,broccoli,cheesy,creamy,casserole,american|20|F|Oven
+d058|🌡️|Sous Vide Herb Chicken Breasts|Unbelievably juicy chicken for salads, bowls and wraps all week.|chicken,lemon,fresh|10|F|Sous vide, vacuum sealer
+d059|🇬🇷|Greek Lemon Chicken & Potatoes|Oregano, lemon and garlic roasted until golden.|chicken,mediterranean,lemon,potato,garlic,citrus|15|F|Oven
+d060|🥜|Cashew Chicken|Crunchy cashews, chicken and veg in a savory GF sauce. Peanut-free.|chicken,asian,peppers,nuts|20|P|Skillet
+d061|🥩|Pressure-Cooker Beef Stew|Fall-apart beef, potatoes and carrots in rich gravy.|beef,stew,gravy,potato,carrot,american|20|F|Pressure cooker
+d062|🥕|Sunday Pot Roast|Slow-cooked roast with carrots and potatoes. Hands-off comfort.|beef,gravy,potato,carrot,american|15|F|Slow cooker
+d063|🥦|Beef & Broccoli|Tender beef and broccoli in a glossy GF sauce.|beef,broccoli,asian,teriyaki|20|F|Pressure cooker
+d064|🥢|Mongolian Beef (Mild)|Sweet-savory crispy beef with green onions.|beef,asian,teriyaki,sweet|25|F|Skillet
+d065|🥔|Cottage Pie|Savory beef and vegetables under a buttery mashed potato crust.|beef,potato,gravy,peas,carrot,casserole,american|30|F|Oven
+d066|🍄|Beef Stroganoff|Tender beef and mushrooms in sour cream sauce over GF noodles.|beef,mushroom,creamy,gravy,pasta|25|F|Pressure cooker
+d067|🌯|Mild Barbacoa Beef Burrito Bowls|Tender shredded beef with lime rice and pinto beans.|beef,mexican,bowl,beans,citrus|15|F|Slow cooker
+d068|🍞|BBQ-Glazed Meatloaf|Classic meatloaf with GF breadcrumbs and a BBQ glaze.|beef,bbq,american|20|F|Oven
+d069|🍔|Cheeseburger Rice Skillet|All the cheeseburger flavor in a one-pan rice dinner.|beef,cheesy,american|20|F|Skillet
+d070|🥢|Korean-Style Ground Beef Bowls|Sweet-savory ground beef with rice and cucumbers. 15 minutes.|beef,asian,bowl,teriyaki,cucumber|15|F|Skillet, rice cooker
+d071|🥩|Sous Vide Steak Bites & Potatoes|Tender steak bites seared after a precise sous vide, cooked through.|beef,potato,garlic|20|P|Sous vide, skillet
+d072|🥔|Beef & Potato Soup|Hearty, brothy and filling. Not tomato-based.|beef,soup,potato,carrot,american|20|F|Pressure cooker
+d073|🌮|Mild Turkey Taco Rice Skillet|Ground turkey, rice, corn and cheese in one pan.|turkey,mexican,corn,cheesy|20|F|Skillet
+d074|🫑|Turkey & Rice Stuffed Peppers|Sweet peppers stuffed with turkey, rice and cheese. Not red-sauce.|turkey,peppers,cheesy|25|F|Oven
+d075|🦃|Turkey Breast with GF Stuffing|Thanksgiving-style roast with herby GF stuffing and gravy.|turkey,gravy,american|25|F|Oven
+d076|🌾|Turkey & Wild Rice Casserole|Creamy mushroom wild rice bake.|turkey,mushroom,creamy,casserole,american|20|F|Oven
+d077|🥘|Ground Turkey Sweet Potato Skillet|Turkey, sweet potato and spinach. Fast and nutritious.|turkey,sweetpotato,spinach|20|F|Skillet
+d078|🐟|Lemon Dill Baked Salmon|Flaky salmon with lemon and dill. 15 minutes in the oven.|salmon,lemon,citrus,fresh|10|P|Oven
+d079|🍯|Teriyaki Salmon|Glazed salmon with rice and broccoli.|salmon,teriyaki,asian,broccoli|10|P|Oven
+d080|🌮|Air-Fryer GF Fish Tacos|Crispy cod, slaw and lime crema on corn tortillas.|whitefish,mexican,crispy,citrus|25|P|Air fryer
+d081|🧀|Parmesan-Crusted Cod|Crunchy parmesan crust on mild, flaky cod.|whitefish,garlicparm,crispy|15|P|Air fryer
+d082|🐟|Salmon Cakes|Crispy GF salmon patties with lemon-dill sauce.|salmon,lemon,crispy|25|F|Air fryer
+d083|🍁|Maple Dijon Salmon & Vegetables|Sheet-pan salmon with sweet potatoes and green beans.|salmon,sweetpotato,greenbeans,sweet|15|P|Oven
+d084|🥥|Chickpea Coconut Curry (Mild)|Creamy, gentle curry with spinach. Meatless and freezer-friendly.|beans,curry,indian,spinach,creamy,veg|15|F|Pressure cooker
+d085|🍄|Pressure-Cooker Mushroom Risotto|Creamy risotto without the stirring.|mushroom,creamy,italian,veg,cheesy|15|P|Pressure cooker
+d086|🍋|Lemon Chicken Risotto with Peas|Bright, creamy and comforting.|chicken,lemon,peas,creamy,italian,citrus|15|P|Pressure cooker
+d087|🍳|Vegetable Fried Rice with Egg|Peas, carrots, corn and egg with tamari.|asian,egg,peas,carrot,corn,veg|15|F|Skillet, rice cooker
+d088|🍜|Chicken Pad See Ew–Style Noodles|Wide rice noodles, broccoli and egg in a sweet-savory GF sauce.|ricenoodle,chicken,asian,broccoli,egg|25|P|Skillet
+d089|🍜|Chicken Lo Mein (GF)|Rice noodles with chicken, cabbage, carrots and a savory sauce.|ricenoodle,chicken,asian,carrot,pasta|20|F|Skillet
+d090|🐖|Slow-Cooker BBQ Pulled Pork|Tender pulled pork for bowls, potatoes or GF buns. (Pork option.)|pork,bbq,american|10|F|Slow cooker
+d091|🌯|Pork Carnitas Bowls|Crispy-edged carnitas, lime rice and pinto beans. (Pork option.)|pork,mexican,bowl,beans,citrus,crispy|15|F|Pressure cooker, air fryer
+d092|🍑|Moroccan Chicken with Apricots|Sweet-warm spices, chickpeas and apricots. Mild.|chicken,mediterranean,stew,beans,sweet|15|F|Slow cooker
+d093|🫒|Mediterranean Chicken & Rice Bake|Chicken, rice, artichokes, olives and lemon baked together.|chicken,mediterranean,artichoke,lemon,casserole|15|F|Oven
+d094|🌯|Chicken Burrito Casserole|Layered rice, chicken, pinto beans, verde sauce and cheese.|chicken,mexican,casserole,beans,verde,cheesy|15|F|Oven
+d095|🥔|Chicken Tater Tot Casserole|Creamy chicken and veg under crispy GF tots.|chicken,potato,casserole,creamy,american,crispy|15|F|Oven
+d096|🍜|Chicken Noodle Casserole|Classic creamy chicken noodle bake with GF noodles.|chicken,pasta,pastabake,creamy,peas,casserole,american|20|F|Oven
+d097|🌮|Hosting Taco Bar (Mild)|Verde chicken, seasoned turkey, pinto beans and all the toppings.|chicken,turkey,mexican,beans,hosting|30|P|Slow cooker
+d098|🍗|Lemon Herb Roast Chicken|A whole roast chicken with potatoes. Leftovers for days.|chicken,lemon,potato,american,hosting|15|P|Oven
+d099|🍋|Air-Fryer Lemon Pepper Wings|Crispy GF wings with zippy lemon pepper. Mild.|chicken,lemon,crispy,citrus|15|F|Air fryer
+d100|🫑|Chicken Sausage, Peppers & Rice|Sweet peppers and onions with mild chicken sausage. Simple and savory.|chicken,peppers,italian|15|F|Skillet
+d101|🧀|Spinach & Cheese Stuffed Chicken|Juicy chicken breasts filled with spinach and cream cheese.|chicken,spinach,cheesy,creamy|20|F|Oven
+d102|🍚|Mild Chicken Biryani|Fragrant layered rice and chicken with warm, gentle spices.|chicken,indian,bowl|25|F|Pressure cooker
+d103|🍝|Sheet-Pan Gnocchi & Vegetables|Crispy GF gnocchi, zucchini, peppers and chicken sausage.|gnocchi,pasta,zucchini,peppers,chicken,crispy|15|N|Oven
+d104|🥩|Italian Beef Ragù Bianco over Polenta|Tender shredded beef with herbs over creamy polenta.|beef,italian,creamy,gravy|15|F|Slow cooker
+d105|🧆|Beef Kofta Plates|Herby beef kofta, rice, cucumber salad and tzatziki.|beef,mediterranean,cucumber,meatball|25|F|Oven
+d106|🥥|Thai-Inspired Coconut Chicken Curry (Mild)|Coconut milk, sweet potato and green beans. Gentle heat only.|chicken,asian,curry,creamy,sweetpotato,greenbeans|20|F|Pressure cooker
+d107|🍗|Crispy Chicken Parmesan (White Sauce)|GF breaded cutlets with mozzarella and a garlic-parmesan cream sauce.|chicken,italian,crispy,cheesy,garlicparm,rich|30|F|Air fryer, oven
+d108|🧇|Chicken & Waffles|Crispy GF chicken tenders on savory waffles with maple.|waffle,chicken,crispy,american,sweet|30|F|Air fryer, waffle maker
+d109|🥬|Kale & White Bean Chicken Sausage Stew|Brothy, garlicky and hearty with parmesan.|stew,soup,chicken,kale,beans,garlic,italian|15|F|Pressure cooker
+d110|🫓|Pesto Chicken Pizza|GF crust, pesto, chicken and mozzarella. Freeze slices.|chicken,pesto,italian,cheesy|15|F|Oven
+s001|🍪|No-Bake Energy Bites|GF oats, sunflower butter, honey and mini chocolate chips. Peanut-free.|sweetsnack,oats,protein|15|F|Food processor
+s002|🍫|Chewy Homemade Granola Bars|Made with certified GF oats and a drizzle of chocolate.|sweetsnack,oats,baked|15|F|Oven
+s003|🍦|Ninja Creami Vanilla Protein Ice Cream|Creamy high-protein ice cream from pasteurized milk and protein shake.|frozen,sweetsnack,protein|5|F|Ninja Creami
+s004|🍓|Ninja Creami Strawberry Frozen Yogurt|Tangy-sweet froyo pints with real berries.|frozen,sweetsnack,fruit|5|F|Ninja Creami
+s005|🍌|Ninja Creami Chocolate Banana "Nice Cream"|Rich and chocolatey with just bananas and cocoa.|frozen,sweetsnack,fruit|5|F|Ninja Creami
+s006|🥕|Hummus & Veggie Snack Boxes|Creamy hummus, carrots, cucumbers and GF crackers.|dip,saltysnack,beans,carrot,cucumber,fresh|10|N|Food processor
+s007|🥚|Hard-Cooked Egg Snack Packs|Eggs cooked all the way through, with a pinch of everything seasoning.|protein,egg|5|N|Pressure cooker
+s008|🧀|Cheese & GF Cracker Boxes|Cheddar, Gouda, grapes and crackers — DIY snack plate.|cheesy,saltysnack,fruit|10|N|None
+s009|🫛|Crispy Air-Fryer Chickpeas|Crunchy, salty and protein-packed.|saltysnack,beans,protein,crispy|10|N|Air fryer
+s010|🍎|Apples with Almond Butter|Crisp apple slices with almond or sunflower butter.|fruit,sweetsnack,fresh,nuts|5|N|None
+s011|🥨|Peanut-Free Trail Mix|Almonds, cashews, pumpkin seeds, raisins and chocolate chips.|saltysnack,sweetsnack,nuts|5|N|None
+s012|🥒|Zucchini Bread Mini Loaves|Moist, lightly sweet and secretly full of veggies.|baked,sweetsnack,zucchini|15|F|Oven
+s013|🫐|Frozen Yogurt Bark|Yogurt spread thin with berries and chocolate, snapped into shards.|frozen,sweetsnack,fruit,protein|10|F|Freezer
+s014|🍠|Air-Fryer Sweet Potato Fries|Crispy outside, tender inside.|saltysnack,sweetpotato,crispy|10|F|Air fryer
+s015|🍿|Stovetop Popcorn|Buttery, salty, and endlessly snackable.|saltysnack,crispy|5|N|Stovetop
+s016|🍪|Chocolate Chip Cookies (Freezer Dough)|Bake two at a time straight from frozen dough balls whenever a craving hits.|baked,sweetsnack|20|F|Stand mixer, toaster oven
+s017|🍫|Fudgy GF Brownies|Crackly tops, gooey middles.|baked,sweetsnack|15|F|Oven
+s018|🥣|Oat & Flax Cookies|Chewy oat cookies with flax, coconut and chocolate.|baked,sweetsnack,oats|15|F|Stand mixer, oven
+s019|🥑|Guacamole & Corn Tortilla Chips|Fresh, chunky, mild guac.|dip,saltysnack,avocado,mexican,fresh|10|N|None
+s020|🧀|Mild Queso Dip|Warm, silky cheese dip for chips and veggies.|dip,cheesy,saltysnack,mexican,rich|10|P|Stovetop
+s021|🌯|Air-Fryer Chicken Taquitos|Crispy rolled corn tortillas with chicken and cheese. Freeze and crisp.|saltysnack,chicken,mexican,crispy|25|F|Air fryer
+s022|🧀|GF Mozzarella Sticks|Crispy air-fried sticks with a creamy garlic-herb dip.|cheesy,saltysnack,crispy,rich|20|F|Air fryer
+s023|🫒|Warm Spinach Artichoke Dip|Creamy, cheesy, bubbly. Great for guests.|dip,spinach,artichoke,cheesy,rich,hosting|10|F|Oven
+s024|🍓|Fruit Smoothie Pops|Blended fruit and yogurt frozen into pops.|frozen,fruit,sweetsnack|10|F|Blender
+s025|🍚|GF Crispy Rice Treats|Gooey marshmallow treats made with gluten-free crispy rice cereal.|sweetsnack|10|F|Stovetop
+s026|🎃|Pumpkin Bread|Spiced, tender GF loaf. Slice and freeze.|baked,sweetsnack,squash|15|F|Oven
+s027|🍓|Chocolate-Dipped Strawberries|A simple, elegant sweet.|fruit,sweetsnack,fresh|10|N|Microwave
+s028|🥒|Greek Yogurt Ranch Dip & Veggies|Cool, tangy dip with crunchy veg.|dip,protein,cucumber,carrot,fresh|10|N|None
+s029|🫛|Steamed Edamame|Salted, warm and satisfying.|saltysnack,protein,asian|5|N|Microwave
+s030|🍑|Cottage Cheese & Fruit Bowls|Creamy cottage cheese with peaches or berries.|protein,fruit,fresh|5|N|None
+s031|🍌|Banana Oat Breakfast Cookies|Soft, lightly sweet cookies you can eat any time.|baked,sweetsnack,oats,fruit|10|F|Oven
+s032|🥔|Air-Fryer Potato Wedges|Golden, crispy and seasoned.|saltysnack,potato,crispy|10|F|Air fryer
+`;
+
+const MEALS = RAW_MEALS.trim().split("\n").map(line => {
+  const [id, emoji, name, desc, tags, effort, fz, eq] = line.split("|").map(s => s.trim());
+  return { id, catKey: id[0], cat: CATS[id[0]], emoji, name, desc,
+           tags: tags.split(",").map(t => t.trim()).filter(Boolean),
+           effort: Number(effort), freezer: FREEZE[fz] || "", eq };
+});
+const BY_ID = Object.fromEntries(MEALS.map(m => [m.id, m]));
+
+/* ---------- Interview definition ----------
+   type: rules | single | multi | levels (Love / Like / Fine / Dislike per item) | text
+   opts: [label, tags it boosts/demotes] */
+const QUESTIONS = [
+  { page: 0, id: "rules", type: "rules" },
+  { page: 0, id: "rulesNote", type: "text", label: "Anything to correct or add to these rules?",
+    hint: "Allergies, intolerances, anything a doctor told you to avoid. Kovas will review any changes personally — this won't silently remove a safety rule.",
+    ph: "e.g. \"All correct\" or \"Also no mushrooms\"" },
+  { page: 0, id: "heat", type: "single", label: "How much spice heat do you enjoy right now?",
+    opts: [["None at all"], ["A gentle warmth is nice"], ["Mild–medium is fine"]] },
+  { page: 0, id: "dairy", type: "single", label: "Cheesy & creamy dishes right now?",
+    opts: [["Love them"], ["Some is fine"], ["Keep it light"]] },
+  { page: 1, id: "proteins", type: "levels", label: "Proteins", hint: "Rate each one. Leave blank if you have no opinion.",
+    opts: [["Chicken", ["chicken"]], ["Beef", ["beef"]], ["Turkey", ["turkey"]], ["Salmon", ["salmon"]],
+           ["White fish (cod)", ["whitefish"]], ["Eggs", ["egg"]], ["Pork", ["pork"]],
+           ["Beans, lentils & chickpeas", ["beans"]], ["Meatless meals", ["veg"]]] },
+  { page: 1, id: "veg", type: "levels", label: "Vegetables", hint: "Rate the ones you have feelings about — skip the rest.",
+    opts: [["Broccoli", ["broccoli"]], ["Spinach", ["spinach"]], ["Bell peppers", ["peppers"]], ["Mushrooms", ["mushroom"]],
+           ["Zucchini", ["zucchini"]], ["Sweet potato", ["sweetpotato"]], ["Potatoes", ["potato"]], ["Carrots", ["carrot"]],
+           ["Peas", ["peas"]], ["Butternut squash & pumpkin", ["squash"]], ["Green beans", ["greenbeans"]], ["Corn", ["corn"]],
+           ["Avocado", ["avocado"]], ["Cucumber", ["cucumber"]], ["Kale", ["kale"]], ["Artichoke", ["artichoke"]]] },
+  { page: 1, id: "cuisines", type: "levels", label: "Cuisines", hint: "Rate each one.",
+    opts: [["American comfort", ["american"]], ["Italian", ["italian"]], ["Mexican / Tex-Mex", ["mexican"]],
+           ["Asian rice & noodles", ["asian", "ricenoodle"]], ["Mediterranean / Greek", ["mediterranean"]],
+           ["Indian-inspired (mild)", ["indian"]]] },
+  { page: 2, id: "sauces", type: "multi", label: "Sauces & flavors you love",
+    opts: [["Creamy / Alfredo", ["creamy", "alfredo"]], ["Vodka sauce", ["vodka"]], ["Pesto", ["pesto"]], ["Lemon & herb", ["lemon"]],
+           ["Garlic parmesan", ["garlicparm"]], ["Teriyaki / honey garlic", ["teriyaki"]], ["BBQ", ["bbq"]],
+           ["Salsa verde", ["verde"]], ["Mild coconut curry", ["curry"]], ["Gravy", ["gravy"]], ["Cheesy", ["cheesy"]]] },
+  { page: 2, id: "pasta", type: "multi", label: "Favorite pasta-type dishes",
+    opts: [["Lasagna", ["lasagna"]], ["Meatballs", ["meatball"]], ["Baked ziti", ["ziti"]], ["Stuffed shells", ["shells"]],
+           ["Mac & cheese", ["mac"]], ["Alfredo", ["alfredo"]], ["Pesto pasta", ["pesto"]], ["Vodka pasta", ["vodka"]],
+           ["Gnocchi", ["gnocchi"]], ["Pasta bakes", ["pastabake"]], ["Pasta salad", ["pastasalad"]], ["Rice noodles", ["ricenoodle"]]] },
+  { page: 2, id: "breakfast", type: "multi", label: "Favorite breakfasts",
+    opts: [["Waffles", ["waffle"]], ["Pancakes", ["pancake"]], ["French toast", ["frenchtoast"]], ["Egg bites", ["eggbite"]],
+           ["Breakfast burritos", ["burrito"]], ["Breakfast sandwiches", ["sandwich"]], ["Oatmeal & baked oats", ["oats"]],
+           ["Muffins & breads", ["muffin"]], ["Yogurt & chia jars", ["parfait"]], ["Smoothies", ["smoothie"]],
+           ["Quiche & frittata", ["quiche"]], ["Savory hash & casseroles", ["hash"]]] },
+  { page: 2, id: "soups", type: "single", label: "Soups & stews?",
+    opts: [["Love them — lots please"], ["Sometimes"], ["Rarely"]] },
+  { page: 2, id: "casseroles", type: "single", label: "Casseroles & bakes?",
+    opts: [["Love them — lots please"], ["Sometimes"], ["Rarely"]] },
+  { page: 2, id: "snacks", type: "multi", label: "Favorite snacks",
+    opts: [["Sweet treats", ["sweetsnack"]], ["Salty & crunchy", ["saltysnack"]], ["Frozen treats / ice cream", ["frozen"]],
+           ["Fruit", ["fruit"]], ["Dips", ["dip"]], ["Cheese", ["cheesy"]], ["Baked goods", ["baked"]], ["Protein snacks", ["protein"]]] },
+  { page: 3, id: "textures", type: "multi", label: "Textures you dislike",
+    opts: [["Mushy / very soft", ["mushy"]], ["Crispy fried coatings", ["crispy"]], ["Thick creamy sauces", ["creamy"]],
+           ["Nuts & seeds", ["nuts"]], ["Chunky soups", ["soup"]]] },
+  { page: 3, id: "aversions", type: "multi", label: "Pregnancy aversions right now",
+    hint: "Anything that's suddenly unappealing — even foods you used to love.",
+    opts: [["Fish", ["salmon", "whitefish"]], ["Eggs", ["egg"]], ["Red meat", ["beef"]], ["Chicken", ["chicken"]],
+           ["Garlic-heavy", ["garlic"]], ["Curry / warm spices", ["curry", "indian"]], ["Rich, heavy food", ["rich"]],
+           ["Very sweet food", ["sweet"]]] },
+  { page: 3, id: "cravings", type: "multi", label: "What are you craving?",
+    opts: [["Sweet", ["sweet", "sweetsnack"]], ["Salty", ["saltysnack"]], ["Sour / citrus", ["citrus", "lemon"]],
+           ["Cheesy", ["cheesy"]], ["Carbs & pasta", ["pasta", "waffle", "pancake"]], ["Cold & icy", ["frozen"]],
+           ["Fruit", ["fruit"]], ["Comfort food", ["american", "casserole"]], ["Fresh & crunchy", ["fresh"]]] },
+  { page: 3, id: "refuse", type: "text", label: "Foods you absolutely refuse to eat",
+    hint: "Separate with commas. Meals mentioning these will be hidden.", ph: "e.g. olives, cottage cheese, mushrooms" },
+  { page: 3, id: "favorites", type: "text", label: "What are your favorite meals that we haven't mentioned?",
+    ph: "Restaurant dishes, family recipes, childhood favorites…" },
+  { page: 3, id: "notes", type: "text", label: "Is there anything else Kovas should know when choosing food for you?",
+    ph: "Portion sizes, times of day you're hungriest, anything at all" }
+];
+const PAGES = [
+  { kicker: "Step 1 of 4 · Safety", title: "First, the ground rules" },
+  { kicker: "Step 2 of 4 · Ingredients", title: "What do you love?" },
+  { kicker: "Step 3 of 4 · Favorites", title: "Your comfort zone" },
+  { kicker: "Step 4 of 4 · Right now", title: "Cravings & dealbreakers" }
+];
+const Q_BY_ID = Object.fromEntries(QUESTIONS.map(q => [q.id, q]));
+
+/* ---------- State ---------- */
+let S = freshState();
+let noteOpen = false;   // note box expanded on the current card
+let storageOK = true;
+let lastSaveError = "";
+
+function nowISO() { return new Date().toISOString(); }
+function freshState() {
+  return { schema: SCHEMA, appVersion: APP_VERSION, startedAt: nowISO(), updatedAt: nowISO(),
+           step: "welcome", ipage: 0, interview: { rulesConfirmed: false }, deck: [], pos: 0,
+           ratings: {}, notes: {}, history: [], lastExportAt: null, ratingsSinceExport: 0 };
+}
+
+/* Validate & clean any incoming state (from localStorage or an imported file). */
+function sanitizeState(raw) {
+  if (!raw || typeof raw !== "object") throw new Error("Not a saved questionnaire.");
+  const s = freshState();
+  s.startedAt = typeof raw.startedAt === "string" ? raw.startedAt : s.startedAt;
+  s.step = ["welcome", "interview", "cards", "review"].includes(raw.step) ? raw.step : "welcome";
+  s.ipage = Number.isInteger(raw.ipage) ? Math.min(Math.max(raw.ipage, 0), PAGES.length - 1) : 0;
+  if (raw.interview && typeof raw.interview === "object") {
+    for (const [k, v] of Object.entries(raw.interview)) {
+      if (typeof v === "string") s.interview[k] = v.slice(0, 5000);
+      else if (typeof v === "boolean") s.interview[k] = v;
+      else if (Array.isArray(v)) s.interview[k] = v.filter(x => typeof x === "string").slice(0, 50);
+      else if (v && typeof v === "object") {
+        s.interview[k] = {};
+        const legacy = { yes: "love", no: "dislike" };   // v1.0 tri-state answers
+        for (const [lk, lv] of Object.entries(v)) {
+          const nv = LEVELS[lv] ? lv : legacy[lv];
+          if (nv) s.interview[k][lk] = nv;
+        }
+      }
+    }
+  }
+  s.deck = Array.isArray(raw.deck) ? [...new Set(raw.deck.filter(id => BY_ID[id]))] : [];
+  s.pos = Number.isInteger(raw.pos) ? Math.min(Math.max(raw.pos, 0), s.deck.length) : 0;
+  if (raw.ratings && typeof raw.ratings === "object") {
+    for (const [id, v] of Object.entries(raw.ratings)) {
+      if (BY_ID[id] && v && RATINGS[v.r]) s.ratings[id] = { r: v.r, at: typeof v.at === "string" ? v.at : nowISO() };
+    }
+  }
+  if (raw.notes && typeof raw.notes === "object") {
+    for (const [id, t] of Object.entries(raw.notes)) if (BY_ID[id] && typeof t === "string" && t.trim()) s.notes[id] = t.slice(0, 1000);
+  }
+  s.history = Array.isArray(raw.history) ? raw.history.filter(h => h && BY_ID[h.id]).slice(-200).map(h => ({
+    id: h.id, prev: h.prev && RATINGS[h.prev.r] ? { r: h.prev.r, at: String(h.prev.at || "") } : null,
+    pos: Number.isInteger(h.pos) ? h.pos : null })) : [];
+  s.lastExportAt = typeof raw.lastExportAt === "string" ? raw.lastExportAt : null;
+  s.ratingsSinceExport = Number.isInteger(raw.ratingsSinceExport) ? raw.ratingsSinceExport : 0;
+  return s;
+}
+
+function save() {
+  S.updatedAt = nowISO();
+  try {
+    const txt = JSON.stringify(S);
+    localStorage.setItem(LS_KEY, txt);
+    if (localStorage.getItem(LS_KEY) !== txt) throw new Error("Save could not be verified");
+    storageOK = true; lastSaveError = "";
+  } catch (e) {
+    storageOK = false; lastSaveError = String(e && e.message || e);
+  }
+  updatePill();
+}
+let saveTimer = null;
+function saveSoon() { clearTimeout(saveTimer); saveTimer = setTimeout(save, 350); }
+
+function load() {
+  try {
+    const txt = localStorage.getItem(LS_KEY);
+    if (txt) S = sanitizeState(JSON.parse(txt));
+    localStorage.setItem(LS_KEY + ".probe", "1"); localStorage.removeItem(LS_KEY + ".probe");
+    storageOK = true;
+  } catch (e) {
+    storageOK = false; lastSaveError = String(e && e.message || e);
+  }
+}
+
+function updatePill() {
+  const p = document.getElementById("savePill");
+  if (storageOK) {
+    p.className = "pill";
+    p.textContent = "✓ Saved " + new Date(S.updatedAt).toLocaleTimeString([], { hour: "numeric", minute: "2-digit" });
+    p.title = "Saved in this browser. Still tap Backup now and then to keep a file copy.";
+  } else {
+    p.className = "pill bad";
+    p.textContent = "⚠ Not auto-saving";
+    p.title = "This browser is not allowing automatic saving (" + lastSaveError + "). Tap Backup to keep your answers.";
+  }
+}
+
+/* ---------- Helpers ---------- */
+function esc(s) { return String(s == null ? "" : s).replace(/[&<>"']/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c])); }
+function hashTie(id) { let h = 0; for (const c of id) h = (h * 31 + c.charCodeAt(0)) % 997; return h / 10000; }
+function ratedCount(kind) { return Object.values(S.ratings).filter(v => kind ? v.r === kind : v.r !== "skipped").length; }
+let toastTimer = null;
+function toast(msg, ms = 2600) {
+  const t = document.getElementById("toast");
+  t.textContent = msg; t.classList.add("show");
+  clearTimeout(toastTimer); toastTimer = setTimeout(() => t.classList.remove("show"), ms);
+}
+function modal({ title, body, ok = "OK", cancel = "Cancel", danger = false, onOk }) {
+  const root = document.getElementById("modalRoot");
+  root.innerHTML = `<div class="modal-bg"><div class="modal" role="dialog" aria-modal="true">
+    <h3>${esc(title)}</h3><div>${body}</div>
+    <div class="row" style="margin-top:18px">
+      ${cancel ? `<button class="btn ghost" data-m="cancel">${esc(cancel)}</button>` : ""}
+      <button class="btn ${danger ? "" : "sage"}" data-m="ok">${esc(ok)}</button>
+    </div></div></div>`;
+  root.querySelector("[data-m=ok]").onclick = () => { root.innerHTML = ""; onOk && onOk(); };
+  const c = root.querySelector("[data-m=cancel]"); if (c) c.onclick = () => { root.innerHTML = ""; };
+}
+
+/* ---------- Relevance scoring ---------- */
+function refuseWords() {
+  return (S.interview.refuse || "").toLowerCase().split(/,|\n|;|\band\b/).map(w => w.trim()).filter(w => w.length >= 3);
+}
+function scoreMeal(m) {
+  const iv = S.interview, tags = new Set(m.tags);
+  let s = 0;
+  const apply = (qid, yesW, noW) => {
+    const q = Q_BY_ID[qid], v = iv[qid]; if (!v) return;
+    for (const [label, otags] of q.opts) {
+      if (!otags || !otags.some(t => tags.has(t))) continue;
+      if (q.type === "levels") {
+        const lv = v[label]; if (!lv || !LEVELS[lv]) continue;
+        s += lv === "dislike" ? noW : yesW * LEVELS[lv].w;
+      } else if (v.includes(label)) s += yesW;
+    }
+  };
+  apply("proteins", 3, -9); apply("veg", 1.5, -5); apply("cuisines", 2, -5);
+  apply("sauces", 2, 0); apply("pasta", 2.5, 0); apply("breakfast", 2.5, 0); apply("snacks", 2, 0);
+  apply("cravings", 1, 0); apply("textures", -2.5, 0); apply("aversions", -6, 0);
+  const soupish = tags.has("soup") || tags.has("stew");
+  if (iv.soups === "Love them — lots please" && soupish) s += 2;
+  if (iv.soups === "Rarely" && soupish) s -= 4;
+  if (iv.casseroles === "Love them — lots please" && (tags.has("casserole") || tags.has("pastabake"))) s += 2;
+  if (iv.casseroles === "Rarely" && tags.has("casserole")) s -= 4;
+  if (iv.dairy === "Keep it light" && (tags.has("rich") || tags.has("cheesy"))) s -= 3;
+  if (iv.dairy === "Love them" && (tags.has("cheesy") || tags.has("creamy"))) s += 1;
+  if (iv.heat === "None at all" && (tags.has("curry") || tags.has("indian"))) s -= 1;
+  // Lynsey's known loves
+  if (["pasta", "lasagna", "meatball", "waffle"].some(t => tags.has(t))) s += 1.5;
+  // Hard "refuse" words hide the meal
+  const text = (m.name + " " + m.desc).toLowerCase();
+  if (refuseWords().some(w => text.includes(w))) s -= 50;
+  return s + hashTie(m.id);
+}
+
+const CAPS = { lasagna: 4, waffle: 4, meatball: 4, soup: 5, burrito: 3, eggbite: 2, pasta: 8, muffin: 3, frozen: 2 };
+function buildDeck(exclude = new Set()) {
+  const scored = MEALS.filter(m => !exclude.has(m.id)).map(m => ({ m, s: scoreMeal(m) })).sort((a, b) => b.s - a.s);
+  const picked = { b: [], l: [], d: [], s: [] }, capCount = {};
+  for (const { m, s } of scored) {
+    if (s <= -6) continue;
+    const k = m.catKey;
+    if (picked[k].length >= DECK_QUOTA[k]) continue;
+    if (m.tags.some(t => CAPS[t] && (capCount[t] || 0) >= CAPS[t])) continue;
+    picked[k].push(m.id);
+    m.tags.forEach(t => { if (CAPS[t]) capCount[t] = (capCount[t] || 0) + 1; });
+  }
+  // Interleave categories so the deck feels varied
+  const pattern = ["d", "b", "l", "d", "b", "s", "d", "l", "b", "d", "l", "s"], out = [];
+  let guard = 0;
+  while (Object.values(picked).some(a => a.length) && guard++ < 1000) {
+    for (const k of pattern) if (picked[k].length) out.push(picked[k].shift());
+  }
+  return out;
+}
+function addMoreMeals() {
+  const inDeck = new Set(S.deck);
+  const more = MEALS.filter(m => !inDeck.has(m.id) && !S.ratings[m.id])
+    .map(m => ({ id: m.id, s: scoreMeal(m) })).filter(x => x.s > -40)
+    .sort((a, b) => b.s - a.s).slice(0, MORE_COUNT).map(x => x.id);
+  if (!more.length) { toast("You've seen every meal in the catalog!"); return; }
+  S.deck.push(...more); save(); render();
+  toast(`Added ${more.length} more meals`);
+}
+function startCards() {
+  if (!S.deck.length) {
+    S.deck = buildDeck(); S.pos = 0;
+  } else {
+    // Re-prioritize meals not yet reached, using any updated interview answers
+    const prefix = S.deck.slice(0, S.pos);
+    const keep = new Set(prefix);
+    const tail = buildDeck(keep).filter(id => !S.ratings[id]);
+    const target = Math.max(S.deck.length - S.pos, 0);
+    S.deck = prefix.concat(tail.slice(0, target));
+  }
+  S.step = "cards"; save(); render(true);
+}
+
+/* ---------- Rating actions ---------- */
+function rate(r) {
+  const id = S.deck[S.pos]; if (!id) return;
+  noteOpen = false;
+  const prev = S.ratings[id] || null;
+  S.history.push({ id, prev, pos: S.pos }); if (S.history.length > 200) S.history.shift();
+  S.ratings[id] = { r, at: nowISO() };
+  S.pos++; S.ratingsSinceExport++;
+  save(); render();
+  if (r !== "skipped" && S.ratingsSinceExport > 0 && S.ratingsSinceExport % 15 === 0)
+    toast("💾 Nice progress! Tap Backup in the top corner to save a checkpoint file.", 4200);
+}
+function setRating(id, r) {
+  const prev = S.ratings[id] || null;
+  S.history.push({ id, prev, pos: null });
+  if (r) S.ratings[id] = { r, at: nowISO() }; else delete S.ratings[id];
+  save(); render();
+}
+function undo() {
+  const h = S.history.pop();
+  if (!h) { toast("Nothing to undo"); return; }
+  if (h.prev) S.ratings[h.id] = h.prev; else delete S.ratings[h.id];
+  if (h.pos != null && S.step === "cards") S.pos = Math.min(h.pos, S.deck.length);
+  save(); render(); toast("Undid: " + BY_ID[h.id].name);
+}
+
+/* ---------- Export / import ---------- */
+function interviewReadable() {
+  const iv = S.interview, out = [];
+  out.push({ question: "Household rules confirmed", answer: iv.rulesConfirmed ? "Yes — confirmed" : "Not confirmed yet" });
+  for (const q of QUESTIONS) {
+    if (q.type === "rules") continue;
+    let a = "";
+    const v = iv[q.id];
+    if (q.type === "levels") {
+      a = Object.keys(LEVELS).map(lv => {
+        const items = q.opts.map(o => o[0]).filter(l => (v || {})[l] === lv);
+        return items.length ? LEVELS[lv].l + ": " + items.join(", ") : "";
+      }).filter(Boolean).join(" | ");
+    } else if (q.type === "multi") a = (v || []).join(", ");
+    else a = v || "";
+    const other = iv[q.id + "_other"];
+    if (other) a = (a ? a + " | " : "") + "Other: " + other;
+    out.push({ id: q.id, question: q.label, answer: a || "(no answer)" });
+  }
+  return out;
+}
+function groupRatings() {
+  const g = { love: [], like: [], maybe: [], no: [], skipped: [] };
+  for (const m of MEALS) {
+    const v = S.ratings[m.id];
+    if (v) g[v.r].push({ id: m.id, name: m.name, category: m.cat, description: m.desc, tags: m.tags,
+                         handsOnMinutes: m.effort, freezer: m.freezer, equipment: m.eq, ratedAt: v.at,
+                         note: S.notes[m.id] || "" });
+  }
+  return g;
+}
+function mealNotes() {
+  return MEALS.filter(m => S.notes[m.id]).map(m => ({ id: m.id, name: m.name, category: m.cat,
+    rating: S.ratings[m.id] ? S.ratings[m.id].r : null, note: S.notes[m.id] }));
+}
+function summaryText() {
+  const g = groupRatings(), unseen = MEALS.filter(m => !S.ratings[m.id]);
+  const L = [];
+  L.push("KOVAS & LYNSEY'S FOOD — Lynsey's answers");
+  L.push("Exported: " + new Date().toLocaleString());
+  L.push(`Progress: ${g.love.length} love, ${g.like.length} like, ${g.maybe.length} maybe, ${g.no.length} no, ${g.skipped.length} skipped, ${unseen.length} never shown (of ${MEALS.length} in catalog).`);
+  L.push("");
+  L.push("HOUSEHOLD RULES (fixed, not changed by preferences):");
+  HOUSE_RULES.forEach(r => L.push("- " + r[1] + (r[2] ? " (" + r[2] + ")" : "")));
+  L.push("- " + HOUSE_PREFS);
+  L.push("");
+  L.push("INTERVIEW");
+  interviewReadable().forEach(x => L.push("- " + x.question + ": " + x.answer));
+  for (const k of ["love", "like", "maybe", "no", "skipped"]) {
+    L.push(""); L.push(`${RATINGS[k].e} ${RATINGS[k].l.toUpperCase()} (${g[k].length})`);
+    g[k].forEach(x => L.push(`- ${x.name} [${x.category}]` + (x.note ? `\n    Note: ${x.note}` : "")));
+  }
+  const unratedNotes = mealNotes().filter(n => !n.rating);
+  if (unratedNotes.length) { L.push(""); L.push("NOTES ON UNRATED DISHES"); unratedNotes.forEach(n => L.push(`- ${n.name}: ${n.note}`)); }
+  L.push(""); L.push(`NOT SHOWN / NOT RATED (${unseen.length}) — do not treat these as approved.`);
+  return L.join("\n");
+}
+function buildExport(kind) {
+  const g = groupRatings(), unseen = MEALS.filter(m => !S.ratings[m.id]);
+  return {
+    schema: SCHEMA, appVersion: APP_VERSION, exportType: kind, exportedAt: nowISO(), respondent: "Lynsey",
+    readMe: "Meal-preference answers for batch cooking. 'ratings' are explicit choices; each may carry a 'note' with Lynsey's requested changes (e.g. less garlic). 'mealNotes' lists every dish note. 'skipped' were shown but not rated. 'unseen' were never shown — do NOT treat them as approved. All meals are planned gluten-free, peanut-free, shellfish-free, pregnancy-safe, no grill, no black beans, not very spicy.",
+    progress: { step: S.step, startedAt: S.startedAt, updatedAt: S.updatedAt, catalogSize: MEALS.length, deckSize: S.deck.length,
+                deckPosition: S.pos, loved: g.love.length, liked: g.like.length, maybe: g.maybe.length, rejected: g.no.length,
+                skipped: g.skipped.length, unseen: unseen.length },
+    householdRules: HOUSE_RULES.map(r => r[1] + (r[2] ? " (" + r[2] + ")" : "")),
+    householdPreferences: HOUSE_PREFS,
+    rulesConfirmedByLynsey: !!S.interview.rulesConfirmed,
+    rulesCorrectionNote: S.interview.rulesNote || "",
+    interviewAnswers: interviewReadable(),
+    ratings: { love: g.love, like: g.like, maybe: g.maybe, no: g.no },
+    skipped: g.skipped,
+    mealNotes: mealNotes(),
+    unseen: unseen.map(m => ({ id: m.id, name: m.name, category: m.cat })),
+    summaryText: summaryText(),
+    state: S
+  };
+}
+function stamp() { const d = new Date(), p = n => String(n).padStart(2, "0"); return `${d.getFullYear()}-${p(d.getMonth() + 1)}-${p(d.getDate())}_${p(d.getHours())}${p(d.getMinutes())}`; }
+function downloadText(filename, text, mime) {
+  try {
+    const blob = new Blob([text], { type: mime });
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement("a");
+    a.href = url; a.download = filename; a.style.display = "none";
+    document.body.appendChild(a); a.click();
+    setTimeout(() => { URL.revokeObjectURL(url); a.remove(); }, 5000);
+    return true;
+  } catch (e) {
+    showCopyFallback(text, "Download didn't work here");
+    return false;
+  }
+}
+function exportJSON(kind) {
+  const name = `Lynsey_Food_Answers_${kind === "final" ? "FINAL_" : "backup_"}${stamp()}.json`;
+  const ok = downloadText(name, JSON.stringify(buildExport(kind), null, 2), "application/json");
+  if (ok) {
+    S.lastExportAt = nowISO(); S.ratingsSinceExport = 0; save();
+    window.__lastExportName = name;
+    toast(`💾 Saved file "${name}" — check Downloads`, 4500);
+  }
+}
+async function shareJSON() {
+  const name = `Lynsey_Food_Answers_FINAL_${stamp()}.json`;
+  const text = JSON.stringify(buildExport("final"), null, 2);
+  try {
+    const file = new File([text], name, { type: "application/json" });
+    if (navigator.canShare && navigator.canShare({ files: [file] })) {
+      await navigator.share({ files: [file], title: "Lynsey's food answers" });
+      S.lastExportAt = nowISO(); S.ratingsSinceExport = 0; save();
+      return;
+    }
+  } catch (e) { if (e && e.name === "AbortError") return; }
+  showCopyFallback(text, "Sharing isn't available here");
+}
+async function copyJSON() {
+  const text = JSON.stringify(buildExport("final"), null, 2);
+  try { await navigator.clipboard.writeText(text); toast("Copied all answers — paste into a message or note"); }
+  catch (e) { showCopyFallback(text, "Copy manually"); }
+}
+function showCopyFallback(text, title) {
+  modal({ title, cancel: "", ok: "Close",
+    body: `<p class="small">Select all of the text below and copy it, then paste it into a note, email or message to Kovas.</p>
+           <textarea readonly style="min-height:200px;font-size:12px" onclick="this.select()">${esc(text)}</textarea>` });
+}
+function hasProgress() {
+  return Object.keys(S.ratings).length > 0 || Object.keys(S.notes).length > 0 || Object.keys(S.interview).some(k => k !== "rulesConfirmed" && S.interview[k] && (typeof S.interview[k] !== "object" || Object.keys(S.interview[k]).length));
+}
+function handleImport(file) {
+  if (!file) return;
+  if (file.size > 5 * 1024 * 1024) { toast("That file is too large to be a backup."); return; }
+  const reader = new FileReader();
+  reader.onerror = () => toast("Couldn't read that file.");
+  reader.onload = () => {
+    let incoming;
+    try {
+      const obj = JSON.parse(reader.result);
+      if (!obj || obj.schema !== SCHEMA || !obj.state) throw new Error("This isn't a Food Picker backup file.");
+      incoming = sanitizeState(obj.state);
+    } catch (e) {
+      modal({ title: "Couldn't restore", cancel: "", ok: "OK",
+              body: `<p>${esc(e.message || "The file couldn't be read.")}</p><p class="small muted">Your current answers were not changed.</p>` });
+      return;
+    }
+    const n = Object.keys(incoming.ratings).length;
+    const apply = () => {
+      try { localStorage.setItem(LS_PREV, JSON.stringify(S)); } catch (e) { /* best effort */ }
+      S = incoming; save(); render(true);
+      toast(`Restored backup — ${n} meal answers`);
+    };
+    if (hasProgress()) {
+      modal({ title: "Replace current answers?", ok: "Replace", danger: true, onOk: apply,
+              body: `<p>This device currently has <b>${Object.keys(S.ratings).length}</b> meal answers. The backup has <b>${n}</b>.</p>
+                     <p class="small muted">Tip: tap Backup first if you might want the current answers later.</p>` });
+    } else apply();
+  };
+  reader.readAsText(file);
+}
+
+/* ---------- Rendering ---------- */
+const app = document.getElementById("app");
+function render(scrollTop) {
+  const v = { welcome: viewWelcome, interview: viewInterview, cards: viewCards, review: viewReview }[S.step] || viewWelcome;
+  app.innerHTML = v();
+  updatePill();
+  if (scrollTop) window.scrollTo(0, 0);
+  if (S.step === "cards") bindSwipe();
+}
+
+function viewWelcome() {
+  const resume = hasProgress();
+  return `
+  <section class="hero">
+    <div class="plate">🍝🧇🥗</div>
+    <h1>Let's plan food you'll love</h1>
+    <p>About 15 minutes, once. Your answers will guide months of easy, freezer-friendly meals before and after the baby arrives.</p>
+  </section>
+  ${!storageOK ? `<div class="callout warn" style="margin-top:14px"><b>Heads up:</b> this browser isn't allowing automatic saving. Your answers will work, but tap <b>💾 Backup</b> every few minutes so nothing is lost.</div>` : ""}
+  <div class="panel"><ol class="steps">
+    <li><span class="n">1</span><div><b>Quick questions</b><div class="small muted">3–4 minutes · tap chips, type only if you want</div></div></li>
+    <li><span class="n">2</span><div><b>Pick meals</b><div class="small muted">About 50 cards · ❤️ 👍 🤔 🚫</div></div></li>
+    <li><span class="n">3</span><div><b>Review &amp; send</b><div class="small muted">Change anything, then download your answers</div></div></li>
+  </ol></div>
+  <div class="stack">
+    ${resume ? `<button class="btn" data-act="resume">Continue where I left off →</button>
+                <button class="btn ghost" data-act="goInterview">Review my questions</button>`
+             : `<button class="btn huge" data-act="goInterview">Let's start →</button>`}
+  </div>
+  <p class="small muted" style="text-align:center;margin-top:16px;line-height:1.5">Your answers save automatically in this browser. To be extra safe, tap <b>💾 Backup</b> (top right) any time to save a file copy.</p>`;
+}
+
+function viewInterview() {
+  const pg = S.ipage, P = PAGES[pg];
+  const qs = QUESTIONS.filter(q => q.page === pg).map(renderQuestion).join("");
+  return `
+  <div class="ihead"><div class="kicker">${esc(P.kicker)}</div><h2>${esc(P.title)}</h2>
+    <div class="dots">${PAGES.map((_, i) => `<i class="${i <= pg ? "on" : ""}"></i>`).join("")}</div></div>
+  ${qs}
+  <div class="navbar">
+    <button class="btn ghost" data-act="ipPrev">← Back</button>
+    ${pg < PAGES.length - 1 ? `<button class="btn" data-act="ipNext">Next →</button>`
+                            : `<button class="btn" data-act="toCards">Start picking meals →</button>`}
+  </div>`;
+}
+function renderQuestion(q) {
+  const iv = S.interview;
+  if (q.type === "rules") {
+    return `<div class="panel q"><h3>Household safety rules</h3>
+      <p class="hint">These are always applied to every meal. Please confirm they're right.</p>
+      <ul class="rules">${HOUSE_RULES.map(r => `<li><span>${r[0]}</span><div><b>${esc(r[1])}</b>${r[2] ? `<div class="small muted">${esc(r[2])}</div>` : ""}</div><span class="lock">🔒 always</span></li>`).join("")}</ul>
+      <p class="prefs">${esc(HOUSE_PREFS)}</p>
+      <div class="chips" style="margin-top:12px"><button class="chip ${iv.rulesConfirmed ? "sel" : ""}" data-act="confirmRules">Yes, these are correct</button></div></div>`;
+  }
+  const head = `<h3>${esc(q.label)}</h3>${q.hint ? `<p class="hint">${esc(q.hint)}</p>` : ""}`;
+  if (q.type === "text") {
+    return `<div class="panel q">${head}<textarea data-text="${q.id}" placeholder="${esc(q.ph || "")}">${esc(iv[q.id] || "")}</textarea></div>`;
+  }
+  if (q.type === "levels") {
+    const cur = iv[q.id] || {};
+    const rows = q.opts.map(([label]) => `<div class="lv"><div class="lbl">${esc(label)}</div><div class="seg">${
+      Object.entries(LEVELS).map(([k, L]) => `<button class="${cur[label] === k ? "on" : ""}" data-act="lvl" data-q="${q.id}" data-l="${esc(label)}" data-v="${k}" aria-label="${esc(label)}: ${L.l}"><span class="e">${L.e}</span>${L.l}</button>`).join("")
+    }</div></div>`).join("");
+    return `<div class="panel q">${head}${rows}<input type="text" class="other" data-text="${q.id}_other" placeholder="Others, or your order of preference (optional)" value="${esc(iv[q.id + "_other"] || "")}"></div>`;
+  }
+  const chips = q.opts.map(([label]) => {
+    const on = q.type === "single" ? iv[q.id] === label : (iv[q.id] || []).includes(label);
+    return `<button class="chip ${on ? "sel" : ""}" data-act="${q.type}" data-q="${q.id}" data-l="${esc(label)}">${esc(label)}</button>`;
+  }).join("");
+  const other = q.type === "multi"
+    ? `<input type="text" class="other" data-text="${q.id}_other" placeholder="Other (optional)" value="${esc(iv[q.id + "_other"] || "")}">` : "";
+  return `<div class="panel q">${head}<div class="chips">${chips}</div>${other}</div>`;
+}
+
+function viewCards() {
+  const total = S.deck.length, pos = S.pos;
+  const rated = S.deck.filter(id => S.ratings[id] && S.ratings[id].r !== "skipped").length;
+  const pct = total ? Math.round(Math.min(pos, total) / total * 100) : 0;
+  const head = `<div class="deckhead"><div><b>${Math.min(pos + 1, total)}</b> <span class="muted">of ${total} meals</span></div>
+      <div class="small muted">${rated} rated · ~${Math.max(0, Math.ceil((total - pos) * 9 / 60))} min left</div></div>
+      <div class="progress"><div style="width:${pct}%"></div></div>`;
+  if (pos >= total) {
+    return head + `<div class="panel done"><div class="big">🎉</div><h2>You finished the deck!</h2>
+      <p class="muted">${rated} meals rated. Want more ideas, or ready to review?</p>
+      <div class="stack" style="margin-top:16px">
+        <button class="btn sage" data-act="toReview">Review my picks →</button>
+        <button class="btn ghost" data-act="more">Show me ${MORE_COUNT} more meals</button>
+        <button class="btn ghost" data-act="back">← Back to last meal</button>
+      </div></div>`;
+  }
+  const m = BY_ID[S.deck[pos]], cur = S.ratings[m.id];
+  return head + `
+  <article class="card cat-${m.catKey}" id="card">
+    <div class="art"><span class="badge">${esc(m.cat)}</span>
+      ${cur ? `<span class="cur">${RATINGS[cur.r].e} ${RATINGS[cur.r].l}</span>` : ""}
+      <span class="em" aria-hidden="true">${m.emoji}</span></div>
+    <div class="body"><h2>${esc(m.name)}</h2><p class="desc">${esc(m.desc)}</p>
+      <div class="facts"><span>⏱ ~${m.effort} min hands-on</span>${m.freezer ? `<span>${esc(m.freezer)}</span>` : ""}<span>🍳 ${esc(m.eq)}</span></div>
+    </div>
+  </article>
+  <div class="notewrap">${(S.notes[m.id] || noteOpen)
+    ? `<textarea data-mnote="${m.id}" rows="2" placeholder="e.g. less garlic, add mushrooms, make it with turkey…">${esc(S.notes[m.id] || "")}</textarea>
+       <div class="small muted">Saved with this dish. Now tap a rating below.</div>`
+    : `<button class="notebtn" data-act="openNote">✎ Add a note about this dish (optional)</button>`}</div>
+  <div class="rate">
+    ${["love", "like", "maybe", "no"].map(k => `<button class="${k} ${cur && cur.r === k ? "on" : ""}" data-act="rate" data-r="${k}" aria-label="${RATINGS[k].l}"><span class="e">${RATINGS[k].e}</span>${RATINGS[k].l}</button>`).join("")}
+  </div>
+  <div class="subnav">
+    <button data-act="back" ${pos === 0 ? "disabled" : ""}>← Back</button>
+    <button data-act="undo" ${S.history.length ? "" : "disabled"}>↶ Undo</button>
+    <button data-act="skip">Skip →</button>
+  </div>
+  <div class="subnav"><button data-act="toReview">✓ Review my picks</button><button data-act="goInterview">✎ My questions</button></div>
+  <p class="gfnote">Every meal will be made gluten-free and pregnancy-safe. Swipe right = 👍, left = 🚫 (optional).</p>`;
+}
+
+function viewReview() {
+  const g = groupRatings(), unseen = MEALS.filter(m => !S.ratings[m.id]);
+  const row = x => {
+    const m = BY_ID[x.id || x];
+    const cur = S.ratings[m.id];
+    const note = S.notes[m.id];
+    return `<div class="item"><div class="ie">${m.emoji}</div><div class="nm"><b>${esc(m.name)}</b><span>${esc(m.cat)} · ~${m.effort} min</span>
+      ${note ? `<input type="text" class="rnote" data-mnote="${m.id}" value="${esc(note)}" aria-label="Note for ${esc(m.name)}">`
+             : `<button class="rnbtn" data-act="rnote" data-id="${m.id}">✎ add note</button>`}</div>
+      <div class="mini">${["love", "like", "maybe", "no"].map(k => `<button class="${cur && cur.r === k ? "on" : ""}" data-act="setR" data-id="${m.id}" data-r="${k}" aria-label="${RATINGS[k].l}">${RATINGS[k].e}</button>`).join("")}</div></div>`;
+  };
+  const group = (k, title) => `<div class="panel group"><h3>${title} <span class="ct">${g[k].length}</span></h3>
+      ${g[k].length ? g[k].map(row).join("") : `<p class="small muted">None yet.</p>`}</div>`;
+  const answers = interviewReadable().map(x => `<dt>${esc(x.question)}</dt><dd>${esc(x.answer)}</dd>`).join("");
+  return `
+  <div class="ihead"><div class="kicker">Final step</div><h2>Your food profile</h2>
+    <p class="muted" style="margin:6px 0 0">Change any answer by tapping a different emoji. Then download your answers and send the file to Kovas.</p></div>
+  <div class="panel stack" style="background:#FFF6EC">
+    <button class="btn huge" data-act="exportFinal">⬇️ Download My Answers</button>
+    <div class="row"><button class="btn ghost" data-act="share">Share…</button><button class="btn ghost" data-act="copy">Copy</button></div>
+    <p class="small muted" style="margin:4px 0 0">Saves a file named <b>Lynsey_Food_Answers_FINAL_….json</b>. On iPhone, choose “Save to Files” or AirDrop it to Kovas.</p>
+  </div>
+  ${group("love", "❤️ Love it")}${group("like", "👍 Sounds good")}${group("maybe", "🤔 Maybe")}${group("no", "🚫 No thanks")}
+  <div class="panel group"><h3>⏭️ Skipped <span class="ct">${g.skipped.length}</span></h3>
+    ${g.skipped.length ? g.skipped.map(row).join("") : `<p class="small muted">None.</p>`}</div>
+  <div class="panel group"><details><summary>Not shown yet (${unseen.length}) — optional</summary>
+    <p class="small muted">These weren't in your deck. They're recorded as “not rated” — rate any you like.</p>
+    ${unseen.map(row).join("")}</details></div>
+  <div class="panel"><h3 style="font-size:20px">Your written answers</h3><dl class="answers">${answers}</dl>
+    <button class="btn ghost" style="margin-top:14px" data-act="goInterview">✎ Edit my answers</button></div>
+  <div class="stack">
+    <button class="btn ghost" data-act="backToCards">← Back to meal cards</button>
+    <button class="btn ghost" data-act="more">Show me ${MORE_COUNT} more meals</button>
+  </div>`;
+}
+
+/* ---------- Events ---------- */
+document.addEventListener("click", e => {
+  const el = e.target.closest("[data-act]"); if (!el || el.disabled) return;
+  const act = el.dataset.act, iv = S.interview;
+  switch (act) {
+    case "backup": exportJSON("backup"); break;
+    case "exportFinal": exportJSON("final"); break;
+    case "share": shareJSON(); break;
+    case "copy": copyJSON(); break;
+    case "summaryTxt": downloadText(`Lynsey_Food_Summary_${stamp()}.txt`, summaryText(), "text/plain"); toast("Downloaded readable summary"); break;
+    case "import": document.getElementById("importFile").click(); break;
+    case "reset":
+      modal({ title: "Start over?", ok: "Erase & start over", danger: true,
+        body: `<p>This erases all answers on this device. A backup file will download first, just in case.</p>`,
+        onOk: () => { exportJSON("backup"); try { localStorage.setItem(LS_PREV, JSON.stringify(S)); } catch (err) {} S = freshState(); save(); render(true); } });
+      break;
+    case "resume": S.step = S.deck.length ? (S.pos >= S.deck.length ? "review" : "cards") : "interview"; save(); render(true); break;
+    case "goInterview": S.step = "interview"; save(); render(true); break;
+    case "ipPrev": if (S.ipage > 0) S.ipage--; else S.step = "welcome"; save(); render(true); break;
+    case "ipNext":
+      if (S.ipage === 0 && !iv.rulesConfirmed && !(iv.rulesNote || "").trim()) { toast("Please tap “Yes, these are correct” — or type a correction — first"); return; }
+      S.ipage = Math.min(S.ipage + 1, PAGES.length - 1); save(); render(true);
+      break;
+    case "toCards":
+      startCards();
+      if (!S.lastExportAt) toast("💾 Tip: tap Backup (top right) now and then to keep a saved copy.", 4500);
+      break;
+    case "confirmRules": iv.rulesConfirmed = !iv.rulesConfirmed; el.classList.toggle("sel", iv.rulesConfirmed); save(); break;
+    case "lvl": {
+      const q = el.dataset.q, l = el.dataset.l, v = el.dataset.v; iv[q] = iv[q] || {};
+      if (iv[q][l] === v) delete iv[q][l]; else iv[q][l] = v;
+      el.parentElement.querySelectorAll("button").forEach(b => b.classList.toggle("on", b.dataset.v === iv[q][l]));
+      save(); break;
+    }
+    case "openNote": {
+      noteOpen = true; render();
+      const t = document.querySelector("textarea[data-mnote]"); if (t) t.focus();
+      break;
+    }
+    case "rnote": {
+      const id = el.dataset.id, inp = document.createElement("input");
+      inp.type = "text"; inp.className = "rnote"; inp.dataset.mnote = id; inp.placeholder = "e.g. less garlic, add mushrooms";
+      el.replaceWith(inp); inp.focus(); break;
+    }
+    case "multi": {
+      const q = el.dataset.q, l = el.dataset.l; iv[q] = iv[q] || [];
+      const i = iv[q].indexOf(l); if (i >= 0) iv[q].splice(i, 1); else iv[q].push(l);
+      el.classList.toggle("sel", i < 0); save(); break;
+    }
+    case "single": {
+      const q = el.dataset.q, l = el.dataset.l;
+      iv[q] = iv[q] === l ? "" : l;
+      el.parentElement.querySelectorAll(".chip").forEach(c => c.classList.toggle("sel", c.dataset.l === iv[q]));
+      save(); break;
+    }
+    case "rate": rate(el.dataset.r); break;
+    case "skip": rate("skipped"); break;
+    case "undo": undo(); break;
+    case "back": if (S.pos > 0) { S.pos--; noteOpen = false; save(); render(); } break;
+    case "more": addMoreMeals(); if (S.step !== "cards") { S.step = "cards"; save(); render(true); } break;
+    case "toReview": S.step = "review"; save(); render(true); break;
+    case "backToCards": S.step = "cards"; if (S.pos >= S.deck.length && S.deck.length) S.pos = S.deck.length; save(); render(true); break;
+    case "setR": {
+      const id = el.dataset.id, r = el.dataset.r;
+      setRating(id, S.ratings[id] && S.ratings[id].r === r ? null : r);
+      break;
+    }
+  }
+});
+document.addEventListener("input", e => {
+  const d = e.target.dataset || {};
+  if (d.text) { S.interview[d.text] = e.target.value.slice(0, 5000); saveSoon(); }
+  else if (d.mnote && BY_ID[d.mnote]) {
+    const t = e.target.value.slice(0, 1000);
+    if (t.trim()) S.notes[d.mnote] = t; else delete S.notes[d.mnote];
+    saveSoon();
+  }
+});
+document.addEventListener("focusout", e => { if (e.target.dataset && (e.target.dataset.text || e.target.dataset.mnote)) save(); });
+document.getElementById("importFile").addEventListener("change", e => { handleImport(e.target.files[0]); e.target.value = ""; });
+document.addEventListener("keydown", e => {
+  if (S.step !== "cards" || /INPUT|TEXTAREA/.test(document.activeElement.tagName) || document.getElementById("modalRoot").innerHTML) return;
+  const map = { "1": "love", "2": "like", "3": "maybe", "4": "no" };
+  if (map[e.key]) rate(map[e.key]);
+  else if (e.key === "s") rate("skipped");
+  else if (e.key === "z" || e.key === "Backspace") { e.preventDefault(); undo(); }
+  else if (e.key === "ArrowLeft" && S.pos > 0) { S.pos--; save(); render(); }
+});
+window.addEventListener("pagehide", save);
+document.addEventListener("visibilitychange", () => { if (document.visibilityState === "hidden") save(); });
+
+/* Optional swipe: right = Sounds good, left = No thanks. Buttons are the primary control. */
+function bindSwipe() {
+  const card = document.getElementById("card"); if (!card) return;
+  let x0 = null, y0 = 0, dx = 0, dy = 0;
+  card.addEventListener("pointerdown", e => { x0 = e.clientX; y0 = e.clientY; dx = dy = 0; });
+  card.addEventListener("pointermove", e => {
+    if (x0 == null) return; dx = e.clientX - x0; dy = e.clientY - y0;
+    if (Math.abs(dx) > Math.abs(dy)) card.style.transform = `translateX(${dx}px) rotate(${dx / 25}deg)`;
+  });
+  const end = () => {
+    if (x0 == null) return; x0 = null;
+    if (Math.abs(dx) > 110 && Math.abs(dx) > 2 * Math.abs(dy)) rate(dx > 0 ? "like" : "no");
+    else card.style.transform = "";
+  };
+  card.addEventListener("pointerup", end); card.addEventListener("pointercancel", end); card.addEventListener("pointerleave", end);
+}
+
+/* ---------- Boot ---------- */
+load();
+render(true);
+if (storageOK) updatePill();
+</script>
+</body>
+</html>
