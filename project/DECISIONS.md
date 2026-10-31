@@ -5,6 +5,8 @@ Confirmed household rules for all meal planning. Newest first. Change only when 
 ## Decisions
 | Date | Decision |
 |---|---|
+| 2026-10-31 | **Online grocery carts:** always turn **substitutions OFF** (an out-of-stock item is left out, not swapped). Check digital coupons for every cart brand and report only coupons that match. Prefer brands that state GF / pasteurized / peanut-free facility over cheaper brands that don't. |
+| 2026-10-31 | **Protein ice cream** (Ninja Creami, "Moose Tracks"-style) is on the menu. Peanut butter cups are replaced with SunButter cups. Protein comes mainly from Fairlife milk and Greek yogurt; powder only if third-party tested and clinician-approved. |
 | 2026-10-31 | **Max hands-on per cooking session raised from 120 to 150 min.** Unattended time can extend beyond that. |
 | 2026-10-31 | **New dishes requested:** Braised Bone-In Short Ribs (wine-free) and Creamy Ground Beef Noodles (stroganoff-style). Both must keep the dish's identity and taste good; adapt from credible sources; never claim untested results. |
 | 2026-10-31 | **Butter substitute: not bought this trip** (Kovas: skip). Recipes use Smart Balance/Melt if it's at home, otherwise olive oil. |

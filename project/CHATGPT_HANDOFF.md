@@ -8,6 +8,8 @@
 
 ## Raw files (no login)
 - https://raw.githubusercontent.com/kkulbis1/food-picker-dk4axu/main/project/STATUS.md
+- https://raw.githubusercontent.com/kkulbis1/food-picker-dk4axu/main/project/COSTCO_LIST.md
+- https://raw.githubusercontent.com/kkulbis1/food-picker-dk4axu/main/project/PLAYBOOK.md
 - https://raw.githubusercontent.com/kkulbis1/food-picker-dk4axu/main/project/SHOPPING_STATUS.md
 - https://raw.githubusercontent.com/kkulbis1/food-picker-dk4axu/main/project/COOKING_PROGRESS.md
 - https://raw.githubusercontent.com/kkulbis1/food-picker-dk4axu/main/project/DECISIONS.md
@@ -22,6 +24,8 @@ Raw files can be cached for a few minutes after a push. These files override cha
 ## Answering common questions
 | Question | Where |
 |---|---|
+| What's on my Costco list? | Read `project/COSTCO_LIST.md`, section by section. Section A is required before cooking |
+| How do we run this system? | `project/PLAYBOOK.md` |
 | What should I do next? | STATUS → "What to do next" |
 | What has Jay completed? | STATUS → "Completed (verified)" |
 | What's on today's shopping list? | SHOPPING_STATUS |

@@ -5,7 +5,7 @@ Last updated: 2026-10-31 ~15:00 MT by Jay (Claude Code). **PLANNED** and **ACTUA
 ## Session log
 | Date | Session | Status | Notes |
 |---|---|---|---|
-| 2026-10-31 | Cook Day 1 | **Planned v2.2 (16 meals, ≤150 min), not started** | Waiting on groceries. Plan: [`cooking/2026-10-31_Cook_Day_1.md`](cooking/2026-10-31_Cook_Day_1.md) |
+| 2026-10-31 | Cook Day 1 | **POSTPONED**: Costco trip not done (no chicken, mushrooms, green beans or broccoli). Plan v2.2 still valid | Waiting on groceries. Plan: [`cooking/2026-10-31_Cook_Day_1.md`](cooking/2026-10-31_Cook_Day_1.md) |
 
 ## Fridge + freezer inventory (ACTUAL)
 | Meal | Portions | Prep date | Location | Food state | Use by | Heat / cook | Cheese | Cost |

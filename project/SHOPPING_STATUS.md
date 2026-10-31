@@ -4,8 +4,8 @@ Last updated: 2026-10-31 ~15:00 MT by Jay (Claude Code). Covers Cook Day 1 **v2.
 
 **Sequence:** Costco (in person) → King Soopers curbside pickup → home.
 **Order status:**
-- Costco: not reported.
-- King Soopers: **cart COMPLETE (54 items, est. $176.59 before tax), substitutions OFF.** Waiting for Kovas to review, pick a pickup time and pay. **No order placed.**
+- Costco: **not done today.** See [`COSTCO_LIST.md`](COSTCO_LIST.md) for the next trip.
+- King Soopers: **ORDER PLACED by Kovas 2026-10-31** (54 items, ~$176.59 before tax at cart time; substitutions off). Reported by Kovas; Jay hasn't seen the confirmation. **Missing items at pickup: not yet reported.**
 - Kovas does checkout, pickup time and payment. Jay never checks out.
 
 **Prices and savings:** none verified yet. King Soopers sale prices and digital coupons need the signed-in browser. Costco's Oct 19 – Nov 15 coupon book applies automatically when your card is scanned; no clipping. No dollar figures appear here until they're verified.

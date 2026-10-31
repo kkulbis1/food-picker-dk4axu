@@ -1,13 +1,14 @@
 # Project status — Household Food
 
-Last updated: 2026-10-31 ~15:00 MT by Jay (Claude Code)
+Last updated: 2026-10-31 ~18:00 MT by Jay (Claude Code)
 
-**Phase:** Cook Day 1 today (v2.2, cap 150 min): **all 16 meals**, enchiladas rolled today. **Sunday 11/1:** 2 new dishes (short ribs, stroganoff-style noodles), 6 more two-person meals.
+**Phase:** Groceries partly done. **King Soopers order placed by Kovas (2026-10-31).** Costco trip **not done**, so **Cook Day 1 and Cook Day 2 are postponed** until Costco (the chicken, mushrooms, green beans, broccoli, short ribs and ground beef all come from Costco).
 
 ## What to do next (Kovas)
-1. **Decide on the butter substitute.** Smart Balance and Melt aren't available for pickup; Earth Balance is the closest match. Then review the cart in [`SHOPPING_STATUS.md`](SHOPPING_STATUS.md) once Jay finishes.
-2. **Costco run** using the 5-item list in [`SHOPPING_STATUS.md`](SHOPPING_STATUS.md). Report anything that was missing.
-3. **Cook** using the step-by-step [`cooking/COOKING_GUIDE.md`](cooking/COOKING_GUIDE.md) (recipes: [`Day 1`](cooking/2026-10-31_Cook_Day_1.md), [`Day 2`](cooking/2026-11-01_Cook_Day_2_New_Recipes.md)). Tell Jay what was actually made and frozen.
+1. **Pick up the King Soopers order.** Put the cold and frozen items away right away. **Beef stir-fry strips:** if the Costco trip and Cook Day are more than **3 days** away, **freeze them now** in their package (label the date).
+2. **Costco trip:** use [`COSTCO_LIST.md`](COSTCO_LIST.md) (ChatGPT can read it out). Section A unblocks Cook Day 1.
+3. **Cook Day 1** (≤150 min) using [`cooking/COOKING_GUIDE.md`](cooking/COOKING_GUIDE.md) on the same day as, or the day after, the Costco trip. Cook Day 2 can follow the next day.
+4. After each step, tell Jay (or ChatGPT, which tells Kovas to tell Jay) what was **actually** bought, made and frozen.
 
 ## Completed (verified)
 - Meal questionnaire published at https://kkulbis1.github.io/food-picker-dk4axu/. Preferences collected; profile built (private).
@@ -30,10 +31,10 @@ Last updated: 2026-10-31 ~15:00 MT by Jay (Claude Code)
 ## Active
 | Task | Owner | Status (PLANNED vs ACTUAL) |
 |---|---|---|
-| Costco trip | Kovas | planned; not reported |
+| Costco trip | Kovas | **not done**; list expanded for the next trip |
 | King Soopers pickup cart | Jay built; Kovas reviews, picks a pickup time, pays | **complete**: 54 items, est. $176.59 before tax, substitutions off. **Not ordered** |
-| King Soopers order | Kovas | not placed |
-| Cook Day 1 | Kovas | planned; not started |
+| King Soopers order | Kovas | **placed** (reported by Kovas 2026-10-31; Jay didn't view the order confirmation). Pickup pending |
+| Cook Day 1 | Kovas | **postponed**: waiting for the Costco proteins and mushrooms |
 | ChatGPT access to the private repo | Kovas (from ChatGPT) | **unverified** |
 
 ## Blockers
