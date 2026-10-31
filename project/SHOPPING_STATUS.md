@@ -5,7 +5,7 @@ Last updated: 2026-10-31 ~15:00 MT by Jay (Claude Code). Covers Cook Day 1 **v2.
 **Sequence:** Costco (in person) → King Soopers curbside pickup → home.
 **Order status:**
 - Costco: not reported.
-- King Soopers: **cart in progress** (17 lines added by Jay; the site is erroring). **No order placed.**
+- King Soopers: **cart ~90% built by Jay** (about 35 lines). 3 items, coupons and the substitution setting remain. The site keeps erroring. **No order placed.**
 - Kovas does checkout, pickup time and payment. Jay never checks out.
 
 **Prices and savings:** none verified yet. King Soopers sale prices and digital coupons need the signed-in browser. Costco's Oct 19 – Nov 15 coupon book applies automatically when your card is scanned; no clipping. No dollar figures appear here until they're verified.
@@ -46,30 +46,39 @@ Store: **Ridge Village, 5301 W 38th Ave** (pickup). Prices below are the live Ki
 | Simple Truth Ginger Paste 3.5 oz | 1 | $3.49 | 0 mg Na per tsp; free from cereals |
 | Kroger 100% Grape Juice 64 oz | 2 | $3.29 ea | shelf-stable (pasteurized) |
 
-### Still to add (site outage interrupted)
+### Added in session 2 (~16:45 MT, after the site recovered)
+| Item | Qty | Price | Note |
+|---|---|---|---|
+| Kroger Frozen Super Sweet Corn 12 oz | 1 | $1.25 | |
+| Kroger 100% Grape Juice 64 oz | +1 (→2) | $3.29 | **verify qty = 2** |
+| Kroger 100% Apple Juice 64 oz | 2 | $2.99 | **Buy 1 Get 1 Free.** Verify qty = 2 |
+| King Soopers 2% milk ½ gal | 1 | $2.59 | Buy 1 Get 1 Free offer (one free ½ gal available if wanted) |
+| Kroger Natural Beef for Stir Fry 1 lb | 2 | $10.00 ea | **verify qty = 2** |
+| Jumbo yellow onions | 5 | ~$0.50 ea | cheaper than the 3 lb bag |
+| Gatorade Fruit Punch 12 × 12 oz | 1 | $7.99 | |
+| Hidden Valley Original Ranch 16 oz | 1 | $4.49 | tagged GF; no fish |
+| Ken's Chunky Blue Cheese 16 oz | 1 | $3.79 | **pasteurized milk**; tagged GF; no fish. The cheaper Kroger brand didn't state pasteurized/GF |
+| Handi-foil Meal Prep Pans w/ lids, 7 ct | 2 (14 pans) | $7.29 ea | freezer-to-oven. **Size not listed** (believed ~2¼ lb oblong; check at pickup) |
+| Kroger Double Zipper Gallon Freezer Bags 28 ct | 1 | $3.99 | |
+| Bounty White Napkins 200 ct | 1 | $3.49 | sale |
+| Swanson Unsalted Beef Broth 32 oz | 2 | $2.50 ea | sale, 2 for $5 |
+| Knox Unflavored Gelatine 4 ct | 1 | $3.29 | |
+| Kroger Tomato Paste 6 oz | 1 | $0.99 | |
+| Sleeved celery | 1 | ~$4 | |
+| Carrots (loose) | 2 | ~$0.21 ea | |
+
+Before session 2: **subtotal $63.86 for 21 items, 1 coupon applied (−$2.26), sale savings −$1.91.** The Birds Eye/Kroger frozen vegetables also get the **"99¢ each when you buy 5 or more"** price.
+
+### Still to add (the site started erroring again ~16:55 MT)
 | Item | Qty | Note |
 |---|---|---|
-| **Kroger 100% Apple Juice 64 oz** | 2 | **Buy 1, Get 1 Free**: 2 for $2.99 |
-| **2% milk ½ gallon** (King Soopers brand) | 1 | **Buy 1, Get 1 Free** ($2.59), so a 2nd is free if you'll use it |
-| Beef for stir-fry, plain | 2 lb | |
-| Yellow onions | **5 (3 lb bag)** | 2 today + 3 Sunday |
-| Red Gatorade Fruit Punch | 1 multipack | |
-| Ranch dressing | 1 | GF; no anchovy/fish/Worcestershire |
-| Blue cheese dressing | 1 | GF; no anchovy/fish/Worcestershire; pasteurized. Leave out if unconfirmed |
-| Napkins | 1 pack | |
-| Foil pans **with lids**, ~2¼ lb oblong | 12 total | |
-| Gallon freezer bags | 1 box | |
-| **Sour cream: upsize 8 oz → 16 oz** | 1 | enchiladas + stroganoff. Swap the 8 oz line |
-| **Unsalted beef broth 32 oz** (Sunday) | 2 | |
-| **Unflavored gelatin** (Knox) (Sunday) | 1 box | |
-| **Tomato paste, small can** (Sunday) | 1 | |
-| **Carrots 1 lb + celery** (Sunday) | 1 + 1 | |
-| **Red wine vinegar** (Sunday) | 1 | |
-| **Spicy brown mustard** (Sunday) | 1 | no wine in the ingredients |
-| **GF wide noodles / rotini 12 oz** (Sunday) | 1 | labeled GF |
-| Butter substitute | — | **Skipped (Kovas).** Use Smart Balance from home if there is any, otherwise olive oil |
-| Digital coupons | — | Not clipped yet |
-| Substitution setting | — | "Allow substitutions" is shown in the cart. Set it so GF items can't be swapped for non-GF items |
+| Red wine vinegar | 1 | Sunday |
+| Spicy brown mustard | 1 | **no wine** in the ingredients |
+| GF noodles/rotini 12 oz | 1 | labeled GF (Sunday) |
+| Sour cream | swap the 8 oz for 16 oz | |
+| Digital coupons | — | browse "Digital Coupons" and clip any that match cart items |
+| Substitution setting | — | turn **off** "Allow substitutions for all out-of-stock items" (protects GF/allergen rules) |
+| Final quantity check | — | grape 2, apple 2, beef 2, onions 5, pans 2, beef broth 2, carrots 2, chicken broth 3 |
 
 **Removed or changed vs. v1:**
 - Regular broth → unsalted.
