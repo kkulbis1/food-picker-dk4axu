@@ -33,7 +33,8 @@ Questions to answer with sources before the first batch:
   - ✅ Morning Glory Muffins
   - ✏️ Hash Brown Breakfast Casserole (no cheese)
   - Plain waffles: **unconfirmed**, so test a small batch before freezing a large one
-- **Snacks:** quick-reheat snacks need new ideas. All 6 snacks shown so far were rejected.
+- **🆕 Peanut-free "Moose Tracks" protein ice cream (Ninja Creami)** (requested by Kovas 2026-10-31; untested). Base: Fairlife milk + Greek yogurt + vanilla + a little sweetener + 1 Tbsp sugar-free vanilla pudding mix. Mix-ins: homemade SunButter cups (Enjoy Life chocolate) and a cocoa-maple fudge swirl. Peanut butter cups are replaced because of the no-peanut rule. Protein powder is optional and only if third-party tested and OK'd by the clinician.
+- **Snacks:** MadeGood bars (GF, peanut-free facility); microwave rice cups for zero-effort sides. quick-reheat snacks need new ideas. All 6 snacks shown so far were rejected.
 - **Salads and sides:** iceberg or arugula base; avocado OK; no other fruit; no romaine; no raw spinach. Plain steam-in-bag vegetables are the zero-effort side.
 
 ## 4. Shopping optimization (every trip)
