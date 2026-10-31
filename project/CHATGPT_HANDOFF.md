@@ -5,7 +5,7 @@
 - **Repository:** `kkulbis1/food-picker-dk4axu`, https://github.com/kkulbis1/food-picker-dk4axu (public)
 - **Branch:** `main`
 - **Latest content commit:** see the line below, or the commit history: https://github.com/kkulbis1/food-picker-dk4axu/commits/main
-- CONTENT_COMMIT_PLACEHOLDER
+- **Content snapshot:** commit `e978083` (2026-10-31)
 
 ## How to get current information
 1. Open the raw files directly (no login needed):
