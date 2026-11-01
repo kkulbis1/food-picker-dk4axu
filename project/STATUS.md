@@ -1,6 +1,16 @@
 # Project status — Household Food
 
-Last updated: 2026-10-31 ~18:00 MT by Jay (Claude Code)
+Last updated: 2026-11-01 by Jay (Claude Code)
+
+## Current state (2026-11-01, reported by Kovas; this overrides older text below)
+- **Cooking now:** one chuck roast half is braising at 300°F. Follow [`cooking/ROAST_FINISH_CARD.md`](cooking/ROAST_FINISH_CARD.md). The other half is in a prepared freezer bag.
+- **Groceries:** Costco is done, the King Soopers order is picked up, and there was one extra King Soopers trip. Receipts are in the ChatGPT chat and **not yet in this repo**, so item lists and quantities here are unverified.
+- **New rule:** no dairy milk in recipes. Sour cream and pasteurized cheese stay. Existing plans that use milk aren't updated yet.
+- **In progress:** a quality audit, new menu, 10-minute cook plan, freezer labels and weekly system. **Don't cook from Cook Day 1 or Cook Day 2 until these are published**, apart from the roast card.
+
+**ChatGPT:** please write out the receipts and updates Kovas gave you, as text he can paste to Jay.
+
+## Older status (2026-10-31)
 
 **Phase:** Groceries partly done. **King Soopers order placed by Kovas (2026-10-31).** Costco trip **not done**, so **Cook Day 1 and Cook Day 2 are postponed** until Costco (the chicken, mushrooms, green beans, broccoli, short ribs and ground beef all come from Costco).
 

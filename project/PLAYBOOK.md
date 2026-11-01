@@ -7,6 +7,7 @@ For Kovas, Jay (Claude Code) and ChatGPT. Rules live in [`DECISIONS.md`](DECISIO
 - **ChatGPT:** reads these files, answers questions, reads the cooking guide aloud stage by stage, gives independent review. Doesn't keep its own task list.
 - **Kovas:** approves, shops at Costco, checks out at King Soopers, cooks, and reports what **actually** happened.
 - **Sync:** GitHub is the only sync. Jay commits and pushes after every milestone. There is no live sync.
+- **Receipts and cooking updates must reach the repo.** Anything Kovas gives ChatGPT, such as receipts, purchases or cook state, isn't visible to Jay until it's in the repo. ChatGPT writes it out as text for Kovas to paste to Jay. Jay also checks the ChatGPT chat directly when Chrome is logged in.
 
 ## The weekly loop
 1. **Plan:** pick dishes from the household's explicit ratings plus the backlog. Aim for about 50% comfort and 50% nutrition. Keep ≤150 min hands-on per session.

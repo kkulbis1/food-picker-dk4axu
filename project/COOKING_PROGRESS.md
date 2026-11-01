@@ -5,6 +5,7 @@ Last updated: 2026-10-31 ~15:00 MT by Jay (Claude Code). **PLANNED** and **ACTUA
 ## Session log
 | Date | Session | Status | Notes |
 |---|---|---|---|
+| 2026-11-01 | Chuck roast | **IN PROGRESS** (reported by Kovas): one half braising at 300°F, one half in a prepared freezer bag. Oven start time and bag contents unverified | [`cooking/ROAST_FINISH_CARD.md`](cooking/ROAST_FINISH_CARD.md) |
 | 2026-10-31 | Cook Day 1 | **POSTPONED**: Costco trip not done (no chicken, mushrooms, green beans or broccoli). Plan v2.2 still valid | Waiting on groceries. Plan: [`cooking/2026-10-31_Cook_Day_1.md`](cooking/2026-10-31_Cook_Day_1.md) |
 
 ## Fridge + freezer inventory (ACTUAL)
